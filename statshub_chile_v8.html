@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StatsHub Chile V8 · Plataforma Deportiva</title>
+<style>
+:root{--bg:#030810;--card:#091523;--card2:#0e1e2f;--line:#19344b;--blue:#18baff;--cyan:#70e5ff;--green:#35dda1;--red:#ff5e77;--gold:#ffd05a;--muted:#839bb0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0,#123d59,transparent 29%),radial-gradient(circle at 0 35%,#0a2538,transparent 24%),var(--bg);color:#f5f9fd;font:14px Arial,sans-serif}.app{max-width:1200px;margin:auto;min-height:100vh;padding-bottom:85px}
+header{height:70px;padding:0 18px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:30;background:#030810ee;border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}.brand{display:flex;align-items:center;gap:10px;font-weight:900}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#25caff,#0872bb);display:grid;place-items:center;font-size:21px}.brand span{color:var(--cyan)}.brand small{display:block;color:#6d879b;font-size:8px;letter-spacing:1px}.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#10263a;border:1px solid #2a4b64;color:var(--cyan);font-weight:900}
+nav{position:fixed;bottom:0;left:0;right:0;z-index:40;background:#07111df5;border-top:1px solid var(--line);backdrop-filter:blur(18px)}nav .navin{max-width:650px;margin:auto;display:flex;justify-content:space-around}nav button{background:none;border:0;color:#71899d;font-size:9px;padding:8px;cursor:pointer}nav span{display:block;font-size:19px;margin-bottom:3px}nav button.active{color:var(--cyan);font-weight:900}
+main{padding:17px}.screen{display:none}.screen.active{display:block}.hero,.box,.detail{background:var(--card);border:1px solid var(--line);border-radius:21px;padding:17px}.hero{padding:23px;background:linear-gradient(135deg,#0d2c44,#08131f);position:relative;overflow:hidden;box-shadow:0 18px 45px #0007}.hero:after{content:"🏀";position:absolute;right:8px;top:-10px;font-size:115px;opacity:.06}.eyebrow{font-size:9px;color:var(--cyan);font-weight:900;letter-spacing:1.5px;text-transform:uppercase}.hero h1{font-size:32px;line-height:1.04;margin:8px 0}.hero p,.muted{color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:11px;padding:11px 14px;background:var(--blue);font-weight:900;cursor:pointer}.btn.alt{background:#10273a;color:#eaf8ff;border:1px solid var(--line)}.search{margin-top:13px;padding:12px;border:1px solid #1c3b52;border-radius:12px;background:#07121e;color:#7892a6}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}.stat{padding:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;cursor:pointer;transition:.18s}.stat:hover,.click:hover{transform:translateY(-2px);border-color:#347b9d}.stat small{color:var(--muted)}.stat strong{display:block;font-size:24px;margin:5px 0}.up{font-size:9px;color:var(--green)}
+.section{margin-top:13px}.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.head h2{font-size:17px;margin:0}.link{font-size:10px;color:var(--cyan);cursor:pointer}.click{cursor:pointer;transition:.18s}
+.live{display:inline-flex;align-items:center;gap:6px;background:#481623;border:1px solid #7b3043;border-radius:8px;padding:5px 8px;font-size:9px;font-weight:900}.dot{width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 9px var(--red)}.match{padding:15px;border-radius:17px;background:linear-gradient(135deg,#102e44,#091522);border:1px solid #28546c}.score{display:flex;align-items:center;justify-content:center;gap:24px;margin:17px 0 8px}.team{text-align:center;width:30%}.icon{width:50px;height:50px;border-radius:15px;margin:auto;background:#143149;display:grid;place-items:center;font-size:22px}.team b{display:block;font-size:12px;margin-top:7px}.score strong{font-size:30px}.center{text-align:center}
+.cards,.leaders{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.card,.leader{background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:14px}.leader{cursor:pointer}.rank{font-size:9px;color:var(--gold);font-weight:900}.metric{font-size:22px;color:var(--cyan);font-weight:900;margin-top:8px}.person{display:flex;align-items:center;gap:10px}.face{width:43px;height:43px;border-radius:13px;background:#123149;display:grid;place-items:center;font-size:20px}.chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}.chip,.badge{padding:5px 7px;border-radius:7px;background:#0b2b3e;border:1px solid #1b4d66;color:#94e5ff;font-size:8px}
+.table{overflow:auto;border:1px solid var(--line);border-radius:16px}table{border-collapse:collapse;width:100%;min-width:570px}th,td{padding:10px 8px;border-bottom:1px solid var(--line);font-size:10px;text-align:center}th{font-size:8px;color:#6e889e}td:nth-child(2),th:nth-child(2){text-align:left}.pos{color:var(--cyan);font-weight:900}
+.detail .title{display:flex;align-items:center;gap:12px}.bigface{width:68px;height:68px;border-radius:18px;background:#12344a;display:grid;place-items:center;font-size:30px}.detail h1{margin:0;font-size:26px}.statsgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}.mini{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:11px}.mini small{display:block;color:var(--muted);font-size:8px}.mini b{display:block;font-size:19px;margin-top:4px}
+.bar{height:8px;background:#08111b;border-radius:20px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:20px}.barrow{display:grid;grid-template-columns:75px 1fr 50px;gap:8px;align-items:center;font-size:9px;margin:9px 0}
+.compare{display:grid;grid-template-columns:1fr 45px 1fr;gap:8px;align-items:center}.comparebox{text-align:center;background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:14px}.comparebox .face{margin:auto}.vs{text-align:center;color:var(--muted);font-weight:900}
+.back{border:1px solid var(--line);background:#0b1927;color:#dff7ff;border-radius:9px;padding:9px 12px;cursor:pointer;margin-bottom:11px}.form{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.field{display:flex;flex-direction:column;gap:5px}.field label{font-size:8px;color:var(--muted)}input,select{padding:11px;border-radius:10px;border:1px solid var(--line);background:#07121e;color:#fff}
+
+#liveScreen{display:none}.livehead{background:linear-gradient(135deg,#0d2d45,#08131f);border:1px solid #2a5871;border-radius:22px;padding:16px}.gameinfo{display:flex;justify-content:space-between;align-items:center}.clock{color:var(--cyan);font-weight:900;font-size:13px}.period{color:var(--muted);font-size:9px;text-align:center}.liveScore{display:flex;align-items:center;justify-content:center;gap:20px;margin:15px 0 4px}.liveScore strong{font-size:38px}.layout{display:grid;grid-template-columns:1.05fr .95fr;gap:12px;margin-top:12px}.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.action{border:1px solid var(--line);background:var(--card2);color:#fff;border-radius:12px;padding:13px 5px;cursor:pointer;font-weight:900}.action small{display:block;color:var(--muted);font-size:8px;margin-top:3px}.p2{border-color:#24627d}.p3{border-color:#3e7085}.p1{border-color:#695c2c}.undo{margin-top:8px;width:100%;border:1px solid #4d2b33;background:#211118;color:#ff9aaa;border-radius:9px;padding:10px;cursor:pointer}.teamselect{display:flex;gap:7px;margin-bottom:9px}.teamselect button{flex:1;padding:9px;border-radius:9px;border:1px solid var(--line);background:#091724;color:#9bb0c0;cursor:pointer}.teamselect .sel{background:#0d2b3e;color:var(--cyan);border-color:#2c7898;font-weight:900}.players{display:flex;flex-direction:column;gap:7px;max-height:470px;overflow:auto}.player{display:grid;grid-template-columns:34px 1fr 40px 40px 40px 48px;gap:5px;align-items:center;padding:9px;border:1px solid var(--line);background:var(--card2);border-radius:12px;cursor:pointer}.player.selected{border-color:#2d85a8;background:#0d2b3f}.num{width:31px;height:31px;border-radius:8px;background:#14334a;display:grid;place-items:center;color:var(--cyan);font-weight:900}.player b{font-size:10px}.pill{text-align:center}.pill small{display:block;color:var(--muted);font-size:7px}.pill strong{font-size:13px}.feed{max-height:210px;overflow:auto}.event{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:9px}.event b{color:var(--cyan)}.note{margin-top:9px;padding:9px;border-radius:9px;background:#0b2030;color:#9ac6d7;font-size:8px}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.cards,.leaders{grid-template-columns:1fr}.statsgrid{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}.form{grid-template-columns:1fr}.hero h1{font-size:28px}.score{gap:10px}.liveScore{gap:8px}.liveScore strong{font-size:31px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="logo">🏀</div><div>STATS<span>HUB CHILE</span><small>PLATAFORMA DEPORTIVA · V8</small></div></div><div class="avatar">EC</div></header>
+
+<nav><div class="navin">
+<button class="active" data-nav="home" onclick="show('home',this)"><span>⌂</span>Inicio</button>
+<button data-nav="players" onclick="show('players',this)"><span>♟</span>Jugadores</button>
+<button data-nav="teams" onclick="show('teams',this)"><span>🏀</span>Equipos</button>
+<button data-nav="tournaments" onclick="show('tournaments',this)"><span>🏆</span>Torneos</button>
+<button data-nav="games" onclick="show('games',this)"><span>📊</span>Partidos</button>
+</div></nav>
+
+<main>
+<section id="home" class="screen active">
+<div class="hero"><div class="eyebrow">V8 · Plataforma deportiva + Mesa estadística</div><h1>El deporte chileno,<br>medido en datos.</h1><p>La plataforma pública y la mesa de estadísticas, conectadas en una sola experiencia.</p><div class="actions"><button class="btn" onclick="show('register')">+ Registrar jugador</button><button class="btn alt" onclick="show('create')">+ Crear torneo</button><button class="btn alt" onclick="show('compare')">⚔ Comparar</button></div><div class="search">⌕ &nbsp; Buscar jugador, equipo o torneo...</div></div>
+<div class="grid"><div class="stat" onclick="show('players')"><small>Jugadores</small><strong>248</strong><span class="up">↑ 12 esta semana</span></div><div class="stat" onclick="show('teams')"><small>Equipos</small><strong>24</strong><span class="up">↑ 3 activos</span></div><div class="stat" onclick="show('tournaments')"><small>Torneos</small><strong>8</strong><span class="up">4 en curso</span></div><div class="stat" onclick="show('games')"><small>Partidos</small><strong>126</strong><span class="up">↑ 8 esta semana</span></div></div>
+<div class="section box"><div class="head"><h2>🔴 Partido en vivo</h2><span class="link" onclick="openLive()">Mesa estadística →</span></div><div class="match click" onclick="openLive()"><div class="live"><i class="dot"></i> EN VIVO · 4º CUARTO</div><div class="score"><div class="team"><div class="icon">🦅</div><b>Español Curicó</b></div><strong id="homePublic">82</strong> — <strong id="awayPublic">76</strong><div class="team"><div class="icon">⚡</div><b>Raptors</b></div></div><div class="muted center">07:42 restantes · Liga Curicó 2026</div></div></div>
+<div class="section box"><div class="head"><h2>🔥 Líderes</h2><span class="link" onclick="show('ranking')">Ranking →</span></div><div class="leaders"><div class="leader click" onclick="show('player')"><span class="rank">#1 PUNTOS</span><b>Mateo Pérez</b><div class="muted">Español Curicó</div><div class="metric">21.4 PPG</div></div><div class="leader click" onclick="show('player')"><span class="rank">#1 REBOTES</span><b>Diego Soto</b><div class="muted">San Martín</div><div class="metric">10.4 RPG</div></div><div class="leader click" onclick="show('player')"><span class="rank">#1 ASIST.</span><b>Tomás Rojas</b><div class="muted">Raptors</div><div class="metric">7.8 APG</div></div></div></div>
+<div class="section box">
+<div class="head"><h2>🚀 Comunidad StatsHub</h2><span class="link" onclick="show('players')">Explorar →</span></div>
+<div class="cards">
+<div class="card"><b>🪪 Pasaporte deportivo</b><div class="muted">Cada jugador tiene un perfil compartible con su trayectoria y estadísticas.</div></div>
+<div class="card"><b>🔥 Jugador de la semana</b><div class="muted">Ranking automático para generar competencia y contenido.</div></div>
+<div class="card"><b>📣 Comparte tu perfil</b><div class="muted">Convierte cada jugador y torneo en una puerta de entrada a StatsHub.</div></div>
+</div>
+</div>
+<div class="section box"><div class="head"><h2>🏆 Liga Curicó 2026</h2><span class="link" onclick="show('tournament')">Abrir →</span></div><div class="table click" onclick="show('tournament')"><table><tr><th>#</th><th>Equipo</th><th>JJ</th><th>PG</th><th>PP</th><th>PTS</th></tr><tr><td class="pos">1</td><td>Español Curicó</td><td>8</td><td>7</td><td>1</td><td>15</td></tr><tr><td class="pos">2</td><td>Club Deportivo Curicó</td><td>8</td><td>6</td><td>2</td><td>14</td></tr><tr><td>3</td><td>San Martín</td><td>8</td><td>5</td><td>3</td><td>13</td></tr></table></div></div>
+</section>
+
+<section id="players" class="screen"><button class="back" onclick="show('home')">← Inicio</button><div class="box"><div class="head"><h2>👤 Jugadores</h2><span class="link" onclick="show('register')">+ Registrar</span></div><div class="cards"><div class="card click" onclick="show('player')"><div class="person"><div class="face">👤</div><div><b>Mateo Pérez</b><div class="muted">Base · Español Curicó</div></div></div><div class="chips"><span class="chip">21.4 PTS</span><span class="chip">7.2 REB</span><span class="chip">6.3 AST</span></div></div><div class="card click" onclick="show('player')"><div class="person"><div class="face">👤</div><div><b>Tomás Rojas</b><div class="muted">Alero · Raptors</div></div></div><div class="chips"><span class="chip">19.8 PTS</span><span class="chip">8.1 REB</span><span class="chip">7.8 AST</span></div></div><div class="card click" onclick="show('player')"><div class="person"><div class="face">👤</div><div><b>Diego Soto</b><div class="muted">Pívot · San Martín</div></div></div><div class="chips"><span class="chip">18.5 PTS</span><span class="chip">10.4 REB</span><span class="chip">2.1 AST</span></div></div></div></div></section>
+
+<section id="teams" class="screen"><button class="back" onclick="show('home')">← Inicio</button><div class="box"><div class="head"><h2>🏀 Equipos</h2><span class="link">+ Crear equipo</span></div><div class="cards"><div class="card click" onclick="show('team')"><div class="person"><div class="face">🦅</div><div><b>Español Curicó</b><div class="muted">8 PJ · 7 PG · 1 PP</div></div></div></div><div class="card click" onclick="show('team')"><div class="person"><div class="face">⚡</div><div><b>Raptors</b><div class="muted">8 PJ · 4 PG · 4 PP</div></div></div></div></div></div></section>
+
+<section id="tournaments" class="screen"><button class="back" onclick="show('home')">← Inicio</button><div class="box"><div class="head"><h2>🏆 Torneos</h2><span class="link" onclick="show('create')">+ Crear</span></div><div class="cards"><div class="card click" onclick="show('tournament')"><b>Liga Curicó 2026</b><div class="muted">Adultos · 8 equipos · En curso</div><div class="chips"><span class="chip">56 partidos</span><span class="chip">Semifinales</span></div></div><div class="card click" onclick="show('tournament')"><b>Regional U18 Maule</b><div class="muted">U18 · 12 equipos · En curso</div></div></div></div></section>
+
+<section id="games" class="screen"><button class="back" onclick="show('home')">← Inicio</button><div class="box"><div class="head"><h2>📊 Partidos</h2><span class="link" onclick="openLive()">🔴 Abrir mesa</span></div><div class="cards"><div class="card click" onclick="openLive()"><div class="live"><i class="dot"></i> EN VIVO</div><div class="score"><div class="team"><div class="icon">🦅</div><b>Español</b></div><strong id="gamesHome">82—76</strong><div class="team"><div class="icon">⚡</div><b>Raptors</b></div></div><div class="muted center">Tocar para llevar estadísticas</div></div><div class="card"><span class="badge">FINAL</span><div class="score"><div class="team"><div class="icon">🏀</div><b>San Martín</b></div><strong>74—68</strong><div class="team"><div class="icon">🏀</div><b>Curicó</b></div></div></div></div></div></section>
+
+<section id="player" class="screen"><button class="back" onclick="show('players')">← Jugadores</button><div class="detail"><div class="title"><div class="bigface">👤</div><div><h1>Mateo Pérez</h1><div class="muted">Base · Español Curicó · #7</div><span class="badge">MVP · JORNADA</span></div></div><div class="statsgrid"><div class="mini"><small>PTS</small><b>21.4</b></div><div class="mini"><small>REB</small><b>7.2</b></div><div class="mini"><small>AST</small><b>6.3</b></div><div class="mini"><small>EFF</small><b>24.5</b></div></div><div class="section box click" onclick="openLive()"><h2>🔴 Estadísticas en vivo</h2><p class="muted">Abrir partido y registrar acciones</p></div><div class="section box click" onclick="shareProfile()"><h2>📤 Compartir perfil</h2><p class="muted">Generar enlace para redes sociales y WhatsApp</p></div><div class="section box click" onclick="show('compare')"><h2>⚔️ Comparar jugador</h2></div></div></section>
+
+<section id="team" class="screen"><button class="back" onclick="show('teams')">← Equipos</button><div class="detail"><div class="title"><div class="bigface">🦅</div><div><h1>Español Curicó</h1><div class="muted">Liga Curicó 2026</div></div></div><div class="statsgrid"><div class="mini"><small>JJ</small><b>8</b></div><div class="mini"><small>PG</small><b>7</b></div><div class="mini"><small>PP</small><b>1</b></div><div class="mini"><small>PTS</small><b id="teamPagePts">82</b></div></div><div class="section box click" onclick="openLive()"><h2>🔴 Llevar estadísticas</h2><p class="muted">Abrir mesa estadística del partido</p></div></div></section>
+
+<section id="tournament" class="screen"><button class="back" onclick="show('tournaments')">← Torneos</button><div class="detail"><div class="eyebrow">TORNEO EN CURSO</div><h1>Liga Curicó 2026</h1><p class="muted">Adultos · 8 equipos · 56 partidos</p><div class="section box"><div class="head"><h2>📊 Tabla</h2><span class="badge">Semifinales</span></div><div class="table"><table><tr><th>#</th><th>Equipo</th><th>JJ</th><th>PG</th><th>PP</th><th>PTS</th></tr><tr><td class="pos">1</td><td>Español Curicó</td><td>8</td><td>7</td><td>1</td><td>15</td></tr><tr><td>2</td><td>Club Deportivo Curicó</td><td>8</td><td>6</td><td>2</td><td>14</td></tr><tr><td>3</td><td>San Martín</td><td>8</td><td>5</td><td>3</td><td>13</td></tr></table></div></div><div class="section box click" onclick="show('ranking')"><h2>📈 Líderes</h2><p class="muted">Puntos · rebotes · asistencias · eficiencia</p></div></div></section>
+
+<section id="ranking" class="screen"><button class="back" onclick="show('home')">← Inicio</button><div class="detail"><h1>📈 Rankings</h1><div class="section box"><div class="cards"><div class="card click" onclick="show('player')"><span class="rank">#1 PUNTOS</span><b>Mateo Pérez</b><div class="metric">21.4 PPG</div></div><div class="card click" onclick="show('player')"><span class="rank">#1 REBOTES</span><b>Diego Soto</b><div class="metric">10.4 RPG</div></div><div class="card click" onclick="show('player')"><span class="rank">#1 ASIST.</span><b>Tomás Rojas</b><div class="metric">7.8 APG</div></div></div></div></div></section>
+
+<section id="compare" class="screen"><button class="back" onclick="show('home')">← Inicio</button><div class="detail"><h1>⚔️ Comparador</h1><div class="compare"><div class="comparebox click" onclick="show('player')"><div class="face">👤</div><b>Mateo Pérez</b><div class="muted">21.4 PPG</div></div><div class="vs">VS</div><div class="comparebox click" onclick="show('player')"><div class="face">👤</div><b>Tomás Rojas</b><div class="muted">19.8 PPG</div></div></div></div></section>
+
+<section id="register" class="screen"><button class="back" onclick="show('players')">← Jugadores</button><div class="detail"><h1>👤 Registrar jugador</h1><div class="form"><div class="field"><label>NOMBRE</label><input placeholder="Nombre completo"></div><div class="field"><label>NACIMIENTO</label><input type="date"></div><div class="field"><label>CLUB</label><select><option>Español Curicó</option><option>Raptors</option></select></div><div class="field"><label>POSICIÓN</label><select><option>Base</option><option>Escolta</option><option>Alero</option><option>Ala-pívot</option><option>Pívot</option></select></div></div><br><button class="btn" onclick="alert('Demo: jugador guardado.')">Guardar jugador</button></div></section>
+
+<section id="create" class="screen"><button class="back" onclick="show('tournaments')">← Torneos</button><div class="detail"><h1>🏆 Crear torneo</h1><div class="form"><div class="field"><label>NOMBRE</label><input placeholder="Liga Curicó 2026"></div><div class="field"><label>CATEGORÍA</label><select><option>Adultos</option><option>U18</option></select></div><div class="field"><label>FORMATO</label><select><option>Todos contra todos</option><option>Grupos + playoffs</option></select></div></div><br><button class="btn" onclick="alert('Demo: torneo creado.')">Crear torneo</button></div></section>
+
+<section id="liveScreen">
+<button class="back" onclick="closeLive()">← Volver a la plataforma</button>
+<div class="livehead"><div class="gameinfo"><div><div class="live"><i class="dot"></i> EN VIVO</div><div class="muted">Liga Curicó 2026 · Semifinal</div></div><div class="clock" id="clock">07:42</div></div><div class="liveScore"><div class="team"><div class="icon">🦅</div><b>Español Curicó</b></div><strong id="liveHome">82</strong> — <strong id="liveAway">76</strong><div class="team"><div class="icon">⚡</div><b>Raptors</b></div></div><div class="period">4º CUARTO</div></div>
+<div class="layout">
+<div><div class="box"><div class="head"><h2>🎯 Registrar acción</h2><span class="muted">Jugador: <b id="selectedName">Mateo Pérez</b></span></div><div class="teamselect"><button id="homeBtn" class="sel" onclick="selectTeam('home')">🦅 Español</button><button id="awayBtn" onclick="selectTeam('away')">⚡ Raptors</button></div><div class="actions"><button class="action p2" onclick="add('2 PTS')">➕ 2 PTS<small>Canasta de 2</small></button><button class="action p3" onclick="add('3 PTS')">🎯 3 PTS<small>Triple</small></button><button class="action p1" onclick="add('1 PTS')">➕ 1 PTS<small>Tiro libre</small></button><button class="action" onclick="add('REB')">↗️ REBOTE<small>+1 REB</small></button><button class="action" onclick="add('AST')">🤝 ASISTENCIA<small>+1 AST</small></button><button class="action" onclick="add('STL')">🖐 ROBO<small>+1 STL</small></button><button class="action" onclick="add('BLK')">🧱 TAPÓN<small>+1 BLK</small></button><button class="action" onclick="add('TOV')">⚠️ PÉRDIDA<small>+1 TOV</small></button><button class="action" onclick="add('FOUL')">🚨 FALTA<small>+1 PF</small></button></div><button class="undo" onclick="undo()">↩ Deshacer última acción</button><div class="note">Selecciona un jugador y registra sus acciones. El marcador y las estadísticas se actualizan al instante.</div></div><div class="section box"><div class="head"><h2>📈 Resumen</h2></div><div class="statsgrid"><div class="mini"><small>REBOTES</small><b id="reb">38</b></div><div class="mini"><small>ASISTENCIAS</small><b id="ast">19</b></div><div class="mini"><small>ROBOS</small><b id="stl">8</b></div><div class="mini"><small>PÉRDIDAS</small><b id="tov">11</b></div></div></div></div>
+<div><div class="box"><div class="head"><h2>👥 Jugadores</h2><span class="muted">Selecciona uno</span></div><div class="players" id="playersList"></div></div><div class="section box"><div class="head"><h2>⚡ Play by play</h2></div><div class="feed" id="feed"></div></div></div>
+</div>
+</section>
+</main></div>
+
+<script>
+let home=82,away=76,selected='Mateo Pérez',selectedTeam='home',history=[];
+let data=[
+{name:'Mateo Pérez',num:7,team:'home',pts:24,reb:7,ast:6,stl:2,blk:0,tov:2,pf:2,min:31},
+{name:'Lucas Díaz',num:11,team:'home',pts:14,reb:5,ast:2,stl:1,blk:1,tov:1,pf:3,min:24},
+{name:'Nicolás Vera',num:5,team:'home',pts:12,reb:6,ast:4,stl:2,blk:0,tov:2,pf:2,min:27},
+{name:'Tomás Rojas',num:8,team:'away',pts:19,reb:8,ast:6,stl:1,blk:1,tov:3,pf:3,min:29},
+{name:'Diego Soto',num:15,team:'away',pts:18,reb:10,ast:2,stl:2,blk:2,tov:2,pf:4,min:28},
+{name:'Felipe Muñoz',num:4,team:'away',pts:11,reb:5,ast:3,stl:1,blk:0,tov:3,pf:2,min:25}
+];
+function show(id,btn){
+ document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id)?.classList.add('active');
+ document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+ const m={home:'home',players:'players',teams:'teams',tournaments:'tournaments',games:'games'};
+ if(m[id])document.querySelector('[data-nav="'+m[id]+'"]')?.classList.add('active');
+ scrollTo({top:0,behavior:'smooth'});
+}
+function openLive(){
+ document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
+ document.getElementById('liveScreen').style.display='block';
+ document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+ render();scrollTo({top:0,behavior:'smooth'});
+}
+function closeLive(){document.getElementById('liveScreen').style.display='none';show('home')}
+function render(){
+ document.getElementById('liveHome').textContent=home;document.getElementById('liveAway').textContent=away;
+ document.getElementById('homePublic').textContent=home;document.getElementById('awayPublic').textContent=away;document.getElementById('gamesHome').textContent=home+'—'+away;document.getElementById('teamPagePts').textContent=home;
+ document.getElementById('playersList').innerHTML=data.map((p,i)=>`<div class="player ${p.name===selected?'selected':''}" onclick="selectPlayer(${i})"><div class="num">${p.num}</div><div><b>${p.name}</b><div class="muted">${p.team==='home'?'🦅 Español':'⚡ Raptors'}</div></div><div class="pill"><small>PTS</small><strong>${p.pts}</strong></div><div class="pill"><small>REB</small><strong>${p.reb}</strong></div><div class="pill"><small>AST</small><strong>${p.ast}</strong></div><div class="pill"><small>MIN</small><strong>${p.min}</strong></div></div>`).join('');
+}
+function selectPlayer(i){selected=data[i].name;selectedTeam=data[i].team;document.getElementById('selectedName').textContent=selected;selectTeam(selectedTeam);render()}
+function selectTeam(t){selectedTeam=t;document.getElementById('homeBtn').classList.toggle('sel',t==='home');document.getElementById('awayBtn').classList.toggle('sel',t==='away')}
+function add(type){
+ let p=data.find(x=>x.name===selected);if(!p)return;
+ history.push({home,away,p:{...p}});
+ if(type==='2 PTS'){p.pts+=2;selectedTeam==='home'?home+=2:away+=2}
+ if(type==='3 PTS'){p.pts+=3;selectedTeam==='home'?home+=3:away+=3}
+ if(type==='1 PTS'){p.pts+=1;selectedTeam==='home'?home++:away++}
+ if(type==='REB')p.reb++;if(type==='AST')p.ast++;if(type==='STL')p.stl++;if(type==='BLK')p.blk++;if(type==='TOV')p.tov++;if(type==='FOUL')p.pf++;
+ let e=document.createElement('div');e.className='event';e.innerHTML=`<span><b>${p.name}</b> · ${type}</span><span>${home} — ${away}</span>`;document.getElementById('feed').prepend(e);render();
+}
+function undo(){let h=history.pop();if(!h)return;home=h.home;away=h.away;let p=data.find(x=>x.name===h.p.name);Object.assign(p,h.p);document.getElementById('feed').firstElementChild?.remove();render()}
+function shareProfile(){
+ if(navigator.share){
+   navigator.share({title:'Mateo Pérez · StatsHub Chile',text:'Mira el perfil y las estadísticas de Mateo Pérez en StatsHub Chile.'});
+ }else{
+   navigator.clipboard?.writeText('StatsHub Chile · Perfil de Mateo Pérez');
+   alert('Perfil preparado para compartir.');
+ }
+}
+render();
+</script>
+</body>
+</html>
