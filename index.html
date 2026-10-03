@@ -526,6 +526,81 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   .tournament-dashboard-banner > .button { margin-left: 52px; }
   .tournament-participant-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
+
+/* Supabase access and shared workspace screens */
+.access-screen { min-height: 100vh; display: grid; place-items: center; padding: 26px 16px; background: radial-gradient(ellipse at 15% 10%, #dbefe7 0, transparent 38%), #f4f7f5; }
+.access-card { width: min(100%, 440px); padding: 30px; border: 1px solid #dfe8e2; border-radius: 20px; background: #fff; box-shadow: 0 24px 70px #163a2a12; }
+.access-loading { text-align: center; }
+.access-loading h1 { margin: 18px 0 4px; font: 800 18px Manrope, sans-serif; letter-spacing: .04em; }
+.access-loading p { color: #758078; font-size: 13px; }
+.access-spinner { display: inline-block; width: 22px; height: 22px; margin-top: 14px; border: 2px solid #d9e9df; border-top-color: #176b52; border-radius: 50%; animation: ec-spin .75s linear infinite; }
+@keyframes ec-spin { to { transform: rotate(360deg); } }
+.access-brand { display: inline-flex; align-items: center; gap: 10px; color: #10251b; text-decoration: none; }
+.access-brand b, .access-brand small { display: block; }
+.access-brand b { font: 800 11px Manrope, sans-serif; letter-spacing: .06em; }
+.access-brand small { margin-top: 3px; color: #78877f; font-size: 8px; letter-spacing: .12em; }
+.access-heading { margin: 30px 0 20px; }
+.access-heading .eyebrow, .workspace-management .eyebrow { color: #56806a; font-size: 9px; font-weight: 800; letter-spacing: .13em; }
+.access-heading h1 { margin: 8px 0 6px; color: #17231c; font: 800 25px Manrope, sans-serif; }
+.access-heading p, .workspace-management .section-header p { margin: 0; color: #718078; font-size: 12px; line-height: 1.6; }
+.access-form { display: grid; gap: 14px; }
+.access-form .field { display: grid; gap: 7px; color: #37473e; font-size: 11px; font-weight: 700; }
+.access-form input { width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid #dbe4de; border-radius: 9px; background: #fbfdfb; color: #17231c; font: inherit; }
+.access-form input:focus, .workspace-gate input:focus, .workspace-gate select:focus { outline: 2px solid #8cc5a3; outline-offset: 1px; }
+.access-submit { width: 100%; min-height: 44px; margin-top: 4px; }
+.access-message { min-height: 18px; margin: 0; color: #2a6b43; font-size: 11px; line-height: 1.5; }
+.access-message.error, .form-message.error { color: #b33337; }
+.access-actions { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.access-link { padding: 4px 0; border: 0; background: transparent; color: #176b52; font: inherit; font-size: 11px; font-weight: 700; cursor: pointer; }
+.access-link:hover { text-decoration: underline; }
+.access-footnote { margin: 22px 0 0; padding-top: 15px; border-top: 1px solid #edf1ee; color: #87928b; font-size: 10px; line-height: 1.6; }
+.workspace-screen { align-items: start; padding-top: clamp(24px, 7vh, 70px); }
+.workspace-gate { width: min(100%, 760px); }
+.gate-topline { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.workspace-list { display: grid; gap: 9px; margin: 20px 0 26px; }
+.workspace-choice { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px; border: 1px solid #e1e9e4; border-radius: 12px; background: #fff; text-align: left; cursor: pointer; }
+.workspace-choice:hover { border-color: #90bca0; background: #f8fcf9; }
+.workspace-choice-mark, .member-avatar { display: grid; place-items: center; flex: 0 0 38px; width: 38px; height: 38px; border-radius: 11px; background: #e9f3ec; color: #176b52; font: 800 14px Manrope, sans-serif; }
+.workspace-choice-copy, .member-copy { min-width: 0; flex: 1; }
+.workspace-choice-copy b, .workspace-choice-copy small, .member-copy b, .member-copy small { display: block; }
+.workspace-choice-copy b, .member-copy b { overflow: hidden; color: #23342a; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.workspace-choice-copy small, .member-copy small { margin-top: 4px; color: #7b8980; font-size: 10px; }
+.workspace-arrow { color: #518265; font-size: 20px; }
+.workspace-empty { display: grid; gap: 5px; margin: 18px 0; padding: 16px; border: 1px dashed #d8e4db; border-radius: 12px; color: #52645a; font-size: 11px; }
+.workspace-empty span { color: #829087; line-height: 1.5; }
+.workspace-create { margin-top: 22px; padding-top: 20px; border-top: 1px solid #edf1ee; }
+.workspace-create h2 { margin: 0 0 14px; color: #293a30; font: 800 14px Manrope, sans-serif; }
+.workspace-gate .field { display: grid; gap: 7px; color: #37473e; font-size: 11px; font-weight: 700; }
+.workspace-gate input:not([type=checkbox]), .workspace-gate select { min-height: 42px; padding: 0 11px; border: 1px solid #dbe4de; border-radius: 8px; background: #fbfdfb; color: #17231c; font: inherit; }
+.workspace-import { display: flex !important; align-items: flex-start; gap: 9px !important; color: #58685e !important; font-size: 10px !important; font-weight: 500 !important; line-height: 1.5; }
+.workspace-import input { margin: 2px 0 0; accent-color: #176b52; }
+.workspace-management { margin-bottom: 20px; }
+.workspace-management .section-header { margin-bottom: 14px; }
+.workspace-management .section-header h2 { margin: 5px 0; color: #17231c; font: 800 20px Manrope, sans-serif; }
+.workspace-management .section-header h3 { margin: 0 0 4px; color: #26372c; font: 800 13px Manrope, sans-serif; }
+.workspace-permissions { display: flex; gap: 10px 22px; flex-wrap: wrap; margin: 17px 0 22px; padding: 12px 14px; border: 1px solid #deebe2; border-radius: 10px; background: #f6fbf7; color: #5d6d62; font-size: 10px; }
+.workspace-permissions b { color: #176b52; }
+.workspace-management-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(260px, .9fr); gap: 28px; }
+.member-list { display: grid; gap: 8px; }
+.member-row { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border: 1px solid #edf1ee; border-radius: 10px; }
+.member-avatar { flex-basis: 32px; width: 32px; height: 32px; border-radius: 50%; font-size: 12px; }
+.invite-form { display: grid; gap: 12px; }
+.invite-result { margin-top: 13px; padding: 13px; border: 1px solid #c9e2d0; border-radius: 10px; background: #f4fbf6; }
+.invite-result[hidden] { display: none; }
+.invite-result label { display: block; margin-bottom: 7px; color: #54705e; font-size: 10px; font-weight: 700; }
+.invite-result input { width: 100%; min-height: 37px; padding: 8px; border: 1px solid #d7e4db; border-radius: 7px; color: #435349; font-size: 10px; }
+.invite-result button { margin-top: 8px; }
+.topbar-account { display: flex; align-items: center; gap: 7px; }
+.topbar-account > span { max-width: 190px; overflow: hidden; color: #66756c; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.cloud-indicator { background: #49ad69 !important; box-shadow: 0 0 0 4px #49ad6924; }
+.muted { color: #7a8980; font-size: 11px; }
+@media (max-width: 760px) {
+  .access-card { padding: 22px; }
+  .workspace-management-grid { grid-template-columns: 1fr; }
+  .topbar { justify-content: space-between; }
+  .topbar-account > span { display: none; }
+  .topbar-account .button { padding: 7px 8px; font-size: 9px; }
+}
 @media (max-width: 430px) {
   .local-chip { padding: 5px 7px; font-size: 7px; }
   .match-card-teams { grid-template-columns: minmax(0,1fr) 50px minmax(0,1fr); gap: 4px; }
@@ -554,7 +629,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
 </head>
 <body>
   <div id="app"></div>
-  <script>
+  <script type="module">
 const modules = {
   "src/components/shell.js": function(exports, require) {
 const { escapeHtml } = require("src/utils/dom.js");
@@ -563,18 +638,21 @@ const navigation = [
   ['teams', '◈', 'Equipos'],
   ['players', '♙', 'Jugadores'],
   ['matches', '◷', 'Partidos'],
-  ['tournaments', '🏆', 'Torneos']
+  ['tournaments', '🏆', 'Torneos'],
+  ['account', '♧', 'Mi equipo']
 ];
 
-function renderShell(routeName) {
+function renderShell(routeName, { workspace = null, user = null } = {}) {
+  const workspaceName = workspace?.name || 'Equipo compartido';
+  const userEmail = user?.email || '';
   return `<div class="app-shell">
     <aside class="sidebar">
       <a class="brand" href="#dashboard"><span class="brand-mark">EC</span><span><b>ESTADÍSTICAS</b><small>CHILE · BÁSQUETBOL</small></span></a>
       <div class="nav-caption">GESTIÓN</div>
       <nav class="main-nav" aria-label="Navegación principal">${navigation.map(([route, icon, label]) => `<a class="nav-link ${routeName === route ? 'active' : ''}" href="#${route}"><span class="nav-icon">${icon}</span><span>${label}</span></a>`).join('')}</nav>
-      <div class="sidebar-bottom"><span class="local-indicator"></span><div><b>Modo local</b><small>Datos guardados en este navegador</small></div></div>
+      <div class="sidebar-bottom"><span class="local-indicator cloud-indicator"></span><div><b>Equipo compartido</b><small>Sincronización activada</small></div></div>
     </aside>
-    <main class="main-area"><header class="topbar"><button class="mobile-brand" data-action="toggle-menu" aria-label="Abrir menú" aria-expanded="false">☰</button><div><span class="topbar-kicker">PLATAFORMA DE GESTIÓN</span><strong>ESTADÍSTICAS CHILE</strong></div><span class="local-chip"><i></i> V1 · LOCAL</span></header><div class="page-content" id="page-content"></div></main>
+    <main class="main-area"><header class="topbar"><button class="mobile-brand" data-action="toggle-menu" aria-label="Abrir menú" aria-expanded="false">☰</button><div class="topbar-title"><span class="topbar-kicker">${escapeHtml(workspaceName)}</span><strong>ESTADÍSTICAS CHILE</strong></div><div class="topbar-account"><span title="${escapeHtml(userEmail)}">${escapeHtml(userEmail)}</span><button class="button button-small button-secondary" data-auth-action="switch-workspace" type="button">Cambiar equipo</button><button class="button button-small button-secondary" data-auth-action="sign-out" type="button">Salir</button></div></header><div class="page-content" id="page-content"></div></main>
   </div>`;
 }
 
@@ -617,9 +695,112 @@ Object.assign(exports, { teamMark, playerAvatar, emptyState, pageHeading, status
   },
   "src/data/repository.js": function(exports, require) {
 const { emptyStore, STORAGE_KEY } = require("src/data/schema.js");
+const { loadWorkspaceDocument, saveWorkspaceDocument, subscribeToWorkspace } = require("src/data/workspace-api.js");
+let storageKey = STORAGE_KEY;
+let cloudWorkspace = null;
+
+function cloneStore(data) {
+  return JSON.parse(JSON.stringify(data));
+}
+
+function normalizeStore(data) {
+  return {
+    version: 1,
+    teams: Array.isArray(data?.teams) ? data.teams : [],
+    players: Array.isArray(data?.players) ? data.players : [],
+    matches: Array.isArray(data?.matches) ? data.matches : [],
+    tournaments: Array.isArray(data?.tournaments) ? data.tournaments : []
+  };
+}
+
+function dispatchSyncEvent(name, detail = {}) {
+  window.dispatchEvent(new CustomEvent(name, { detail }));
+}
+
+function storeDocument(documentData) {
+  try { localStorage.setItem(storageKey, JSON.stringify(normalizeStore(documentData))); }
+  catch { /* A remote workspace remains the source of truth if local cache is unavailable. */ }
+}
+
+async function refreshWorkspace(ctx, reason = 'remote') {
+  if (ctx.refreshing || ctx !== cloudWorkspace) return;
+  ctx.refreshing = true;
+  try {
+    const latest = await loadWorkspaceDocument(ctx.client, ctx.workspaceId);
+    if (ctx !== cloudWorkspace) return;
+    if (latest.revision > ctx.revision) {
+      ctx.revision = latest.revision;
+      storeDocument(latest.document);
+      dispatchSyncEvent('ec:workspace-change', { reason, revision: latest.revision });
+    }
+  } finally {
+    ctx.refreshing = false;
+    ctx.syncBlocked = false;
+  }
+}
+
+function queueWorkspaceSave(snapshot) {
+  const ctx = cloudWorkspace;
+  if (!ctx) return;
+  const generation = ctx.generation;
+  ctx.pending += 1;
+  ctx.queue = ctx.queue.then(async () => {
+    if (ctx !== cloudWorkspace || generation !== ctx.generation) return;
+    const result = await saveWorkspaceDocument(ctx.client, ctx.workspaceId, ctx.revision, snapshot);
+    if (ctx !== cloudWorkspace || generation !== ctx.generation) return;
+    if (result?.saved) {
+      ctx.revision = Number(result.current_revision);
+      dispatchSyncEvent('ec:workspace-saved', { revision: ctx.revision });
+      return;
+    }
+
+    ctx.generation += 1;
+    ctx.syncBlocked = true;
+    await refreshWorkspace(ctx, 'conflict');
+    dispatchSyncEvent('ec:workspace-conflict', { revision: ctx.revision });
+  }).catch(error => {
+    dispatchSyncEvent('ec:workspace-error', { message: error.message || 'No se pudo sincronizar con Supabase.' });
+  }).finally(() => {
+    ctx.pending = Math.max(0, ctx.pending - 1);
+  });
+}
+
+function activateWorkspaceStore({ client, workspaceId, role, revision, document: remoteDocument }) {
+  deactivateWorkspaceStore();
+  storageKey = `${STORAGE_KEY}:workspace:${workspaceId}`;
+  const remoteChannel = subscribeToWorkspace(client, workspaceId, payload => {
+    if (cloudWorkspace?.pending) return;
+    const incomingRevision = Number(payload?.new?.revision || 0);
+    if (incomingRevision > (cloudWorkspace?.revision || 0)) void refreshWorkspace(cloudWorkspace, 'remote');
+  });
+  cloudWorkspace = {
+    client, workspaceId, role, revision: Number(revision) || 0,
+    queue: Promise.resolve(), pending: 0, generation: 0, syncBlocked: false, remoteChannel
+  };
+  storeDocument(remoteDocument);
+}
+
+function deactivateWorkspaceStore() {
+  const previous = cloudWorkspace;
+  cloudWorkspace = null;
+  storageKey = STORAGE_KEY;
+  if (previous?.remoteChannel) void previous.client.removeChannel(previous.remoteChannel);
+}
+
+function replaceActiveStore(documentData, { sync = false } = {}) {
+  const normalized = normalizeStore(documentData);
+  storeDocument(normalized);
+  if (sync) queueWorkspaceSave(cloneStore(normalized));
+}
+
+function hasLocalData() {
+  const local = readStore();
+  return Boolean(local.teams.length || local.players.length || local.matches.length || local.tournaments.length);
+}
+
 function readStore() {
   try {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved = localStorage.getItem(storageKey);
     if (!saved) return emptyStore();
     const data = JSON.parse(saved);
     if (data.version !== 1 || !Array.isArray(data.teams) || !Array.isArray(data.players) || !Array.isArray(data.matches)) {
@@ -635,18 +816,21 @@ function readStore() {
 
 function writeStore(data) {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    localStorage.setItem(storageKey, JSON.stringify(data));
     return { ok: true };
   } catch {
     return { ok: false, error: 'No se pudieron guardar los datos. Puede que el almacenamiento del navegador esté lleno.' };
   }
 }
 
-function updateStore(mutator) {
+function updateStore(mutator, { sync = true } = {}) {
+  if (sync && cloudWorkspace?.role === 'viewer') throw new Error('Tu perfil permite consultar los datos, pero no modificarlos.');
+  if (sync && cloudWorkspace?.syncBlocked) throw new Error('El equipo recibió cambios nuevos. Espera un instante y vuelve a intentar.');
   const data = readStore();
   const result = mutator(data);
   const saved = writeStore(data);
   if (!saved.ok) throw new Error(saved.error);
+  if (sync && cloudWorkspace) queueWorkspaceSave(cloneStore(data));
   return result;
 }
 
@@ -668,7 +852,7 @@ function getMatch(id) {
 }
 
 
-Object.assign(exports, { readStore, writeStore, updateStore, makeId, getTeam, getPlayer, getMatch });
+Object.assign(exports, { activateWorkspaceStore, deactivateWorkspaceStore, replaceActiveStore, hasLocalData, readStore, writeStore, updateStore, makeId, getTeam, getPlayer, getMatch });
   },
   "src/data/schema.js": function(exports, require) {
 const STORAGE_KEY = 'estadisticas-chile:v1';
@@ -679,6 +863,114 @@ function emptyStore() {
 
 
 Object.assign(exports, { STORAGE_KEY, emptyStore });
+  },
+  "src/data/supabase-client.js": function(exports, require) {
+const { createClient } = require("@supabase/supabase-js");
+const { SUPABASE_PUBLISHABLE_KEY, SUPABASE_URL } = require("src/data/supabase-config.js");
+const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+  auth: {
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: true
+  }
+});
+
+
+Object.assign(exports, { supabase });
+  },
+  "src/data/supabase-config.js": function(exports, require) {
+// Clave publishable: se puede incluir en el frontend; la seguridad depende de RLS.
+const SUPABASE_URL = "https://gehuzdxxzddfhafzxvzh.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_VGK73xicNc9ZFCHHHHCYfA_4Fgf76lr";
+
+
+Object.assign(exports, { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY });
+  },
+  "src/data/workspace-api.js": function(exports, require) {
+async function listWorkspaces(client) {
+  const [workspaceResult, memberResult] = await Promise.all([
+    client.from('ec_workspaces').select('id,name,owner_id,created_at').order('created_at'),
+    client.from('ec_workspace_members').select('workspace_id,role')
+  ]);
+  if (workspaceResult.error) throw workspaceResult.error;
+  if (memberResult.error) throw memberResult.error;
+  const roles = new Map(memberResult.data.map(member => [member.workspace_id, member.role]));
+  return workspaceResult.data.map(workspace => ({ ...workspace, role: roles.get(workspace.id) || 'viewer' }));
+}
+
+async function createWorkspace(client, name) {
+  const { data, error } = await client.rpc('ec_create_workspace', { p_name: name });
+  if (error) throw error;
+  return data;
+}
+
+async function loadWorkspaceDocument(client, workspaceId) {
+  const [meta, teams, players, matches, tournaments] = await Promise.all([
+    client.from('ec_workspace_meta').select('revision').eq('workspace_id', workspaceId).single(),
+    client.from('ec_teams').select('id,payload').eq('workspace_id', workspaceId),
+    client.from('ec_players').select('id,payload').eq('workspace_id', workspaceId),
+    client.from('ec_matches').select('id,payload').eq('workspace_id', workspaceId),
+    client.from('ec_tournaments').select('id,payload').eq('workspace_id', workspaceId)
+  ]);
+  for (const result of [meta, teams, players, matches, tournaments]) if (result.error) throw result.error;
+  return {
+    revision: Number(meta.data.revision),
+    document: {
+      version: 1,
+      teams: teams.data.map(row => row.payload),
+      players: players.data.map(row => row.payload),
+      matches: matches.data.map(row => row.payload),
+      tournaments: tournaments.data.map(row => row.payload)
+    }
+  };
+}
+
+async function saveWorkspaceDocument(client, workspaceId, revision, document) {
+  const { data, error } = await client.rpc('ec_save_workspace_document', {
+    p_workspace_id: workspaceId,
+    p_expected_revision: revision,
+    p_document: document
+  });
+  if (error) throw error;
+  return Array.isArray(data) ? data[0] : data;
+}
+
+async function createWorkspaceInvite(client, workspaceId, tokenHash, role) {
+  const { data, error } = await client.rpc('ec_create_workspace_invite', {
+    p_workspace_id: workspaceId,
+    p_token_hash: tokenHash,
+    p_role: role
+  });
+  if (error) throw error;
+  return Array.isArray(data) ? data[0] : data;
+}
+
+async function listWorkspaceMembers(client, workspaceId) {
+  const { data, error } = await client.from('ec_workspace_members')
+    .select('user_id,role,display_name,joined_at')
+    .eq('workspace_id', workspaceId)
+    .order('joined_at');
+  if (error) throw error;
+  return data;
+}
+
+async function acceptWorkspaceInvite(client, tokenHash) {
+  const { data, error } = await client.rpc('ec_accept_workspace_invite', { p_token_hash: tokenHash });
+  if (error) throw error;
+  return Array.isArray(data) ? data[0] : data;
+}
+
+function subscribeToWorkspace(client, workspaceId, onChange) {
+  return client.channel(`ec-workspace-${workspaceId}`)
+    .on('postgres_changes', {
+      event: 'UPDATE', schema: 'public', table: 'ec_workspace_meta',
+      filter: `workspace_id=eq.${workspaceId}`
+    }, onChange)
+    .subscribe();
+}
+
+
+Object.assign(exports, { listWorkspaces, createWorkspace, loadWorkspaceDocument, saveWorkspaceDocument, createWorkspaceInvite, listWorkspaceMembers, acceptWorkspaceInvite, subscribeToWorkspace });
   },
   "src/domain/matches.js": function(exports, require) {
 const { emptyStats } = require("src/domain/statistics.js");
@@ -1258,7 +1550,9 @@ Object.assign(exports, { TOURNAMENT_FORMATS, createTournament, getTournamentStan
   "src/main.js": function(exports, require) {
 const { renderShell } = require("src/components/shell.js");
 const { emptyState, pageHeading } = require("src/components/ui.js");
-const { readStore, writeStore, updateStore, makeId } = require("src/data/repository.js");
+const { readStore, writeStore, updateStore, makeId, activateWorkspaceStore, deactivateWorkspaceStore, replaceActiveStore, hasLocalData } = require("src/data/repository.js");
+const { supabase } = require("src/data/supabase-client.js");
+const { acceptWorkspaceInvite, createWorkspace, createWorkspaceInvite, listWorkspaceMembers, listWorkspaces, loadWorkspaceDocument } = require("src/data/workspace-api.js");
 const { newMatch, startMatch, recordAction, undoLastAction, toggleOnCourt, advanceQuarter, finalizeMatch } = require("src/domain/matches.js");
 const { createTournament, updateTournamentAfterMatch } = require("src/domain/tournaments.js");
 const { renderDashboard } = require("src/pages/dashboard.js");
@@ -1268,12 +1562,23 @@ const { renderMatches } = require("src/pages/matches.js");
 const { renderTournaments } = require("src/pages/tournaments.js");
 const { renderLiveMatch } = require("src/pages/live-match.js");
 const { renderPlayerProfile } = require("src/pages/player-profile.js");
+const { renderAuthScreen, renderLoadingScreen, renderWorkspaceGate, renderWorkspaceManagement } = require("src/pages/access.js");
 const { currentRoute, navigate } = require("src/router.js");
 const { formatClock } = require("src/utils/dom.js");
 const app = document.querySelector('#app');
 let clockInterval = null;
 let clockMatchId = null;
 let toastTimeout = null;
+let authReady = false;
+let authUser = null;
+let activeWorkspace = null;
+let availableWorkspaces = [];
+let workspaceMembers = [];
+let authMode = 'login';
+let gateMessage = '';
+let gateMessageIsError = false;
+let authLoadVersion = 0;
+let passwordRecoveryMode = false;
 
 function showToast(message, kind = 'success') {
   let toast = document.querySelector('#app-toast');
@@ -1301,21 +1606,270 @@ function pageContent(route, store) {
     case 'tournament': return renderTournaments(store, route.id);
     case 'match': return renderLiveMatch(store, store.matches.find(match => match.id === route.id));
     case 'profile': return renderPlayerProfile(store, route.id);
+    case 'account': return renderWorkspaceManagement({ workspace: activeWorkspace, members: workspaceMembers, user: authUser });
     default: return `${pageHeading('V1', 'Página no encontrada', 'La dirección no corresponde a una sección de ESTADÍSTICAS CHILE.')} ${emptyState('Ruta no disponible', 'Usa el menú principal para continuar.', '<a class="button button-secondary" href="#dashboard">Volver al inicio</a>')}`;
   }
 }
 
 function renderRoute() {
+  if (!authReady) {
+    app.innerHTML = renderLoadingScreen();
+    return;
+  }
+  if (passwordRecoveryMode) {
+    app.innerHTML = renderAuthScreen('password', { message: gateMessage, error: gateMessageIsError });
+    return;
+  }
+  if (!authUser) {
+    app.innerHTML = renderAuthScreen(authMode, { message: gateMessage, error: gateMessageIsError, invitePending: Boolean(new URLSearchParams(window.location.search).get('invite')) });
+    return;
+  }
+  if (!activeWorkspace) {
+    app.innerHTML = renderWorkspaceGate({ user: authUser, workspaces: availableWorkspaces, hasLocalData: hasLocalData(), message: gateMessage, error: gateMessageIsError });
+    return;
+  }
   const route = currentRoute();
   const activeRoute = route.name === 'profile' ? 'players'
     : route.name === 'match' ? 'matches'
       : route.name === 'tournament' ? 'tournaments' : route.name;
-  app.innerHTML = renderShell(activeRoute);
+  app.innerHTML = renderShell(activeRoute, { workspace: activeWorkspace, user: authUser });
   document.querySelector('#page-content').innerHTML = pageContent(route, readStore());
   if (route.name === 'match') {
     const match = readStore().matches.find(item => item.id === route.id);
     if (match?.status === 'live' && match.clockRunning) startClock(match.id);
   }
+}
+
+function setGateMessage(message, isError = false) {
+  gateMessage = message;
+  gateMessageIsError = isError;
+}
+
+async function hashInviteToken(token) {
+  const bytes = new TextEncoder().encode(token);
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('');
+}
+
+function removeInviteFromAddress() {
+  const url = new URL(window.location.href);
+  url.searchParams.delete('invite');
+  history.replaceState(null, '', url);
+}
+
+function authRedirectUrl(preserveInvite = false) {
+  const redirect = new URL(`${window.location.origin}${window.location.pathname}`);
+  if (preserveInvite) {
+    const invite = new URLSearchParams(window.location.search).get('invite');
+    if (invite) redirect.searchParams.set('invite', invite);
+  }
+  return redirect.toString();
+}
+
+async function activateCloudWorkspace(workspace, expectedLoadVersion = authLoadVersion) {
+  const loaded = await loadWorkspaceDocument(supabase, workspace.id);
+  if (expectedLoadVersion !== authLoadVersion) return;
+  activateWorkspaceStore({
+    client: supabase, workspaceId: workspace.id, role: workspace.role,
+    revision: loaded.revision, document: loaded.document
+  });
+  activeWorkspace = workspace;
+  localStorage.setItem(`estadisticas-chile:active-workspace:${authUser.id}`, workspace.id);
+  workspaceMembers = await listWorkspaceMembers(supabase, workspace.id);
+  if (expectedLoadVersion === authLoadVersion) {
+    authReady = true;
+    renderRoute();
+  }
+}
+
+async function handleAuthenticatedSession(session) {
+  const loadVersion = ++authLoadVersion;
+  authReady = false;
+  renderRoute();
+  if (!session?.user) {
+    authUser = null;
+    activeWorkspace = null;
+    availableWorkspaces = [];
+    workspaceMembers = [];
+    passwordRecoveryMode = false;
+    deactivateWorkspaceStore();
+    authMode = 'login';
+    setGateMessage('');
+    authReady = true;
+    renderRoute();
+    return;
+  }
+
+  authUser = session.user;
+  try {
+    const url = new URL(window.location.href);
+    const invitationToken = url.searchParams.get('invite');
+    if (invitationToken) {
+      try {
+        const accepted = await acceptWorkspaceInvite(supabase, await hashInviteToken(invitationToken));
+        removeInviteFromAddress();
+        setGateMessage(`Te uniste a ${accepted.workspace_name}.`);
+      } catch (error) {
+        setGateMessage(error.message || 'No se pudo aceptar la invitación.', true);
+      }
+    }
+    availableWorkspaces = await listWorkspaces(supabase);
+    if (loadVersion !== authLoadVersion) return;
+
+    const lastId = localStorage.getItem(`estadisticas-chile:active-workspace:${authUser.id}`);
+    const chosen = availableWorkspaces.find(workspace => workspace.id === lastId)
+      || (availableWorkspaces.length === 1 ? availableWorkspaces[0] : null);
+    if (chosen) {
+      passwordRecoveryMode = false;
+      await activateCloudWorkspace(chosen, loadVersion);
+      return;
+    }
+    activeWorkspace = null;
+    workspaceMembers = [];
+  } catch (error) {
+    activeWorkspace = null;
+    availableWorkspaces = [];
+    setGateMessage(`No se pudo conectar con el equipo. ${error.message || ''}`, true);
+  }
+  if (loadVersion === authLoadVersion) {
+    authReady = true;
+    renderRoute();
+  }
+}
+
+async function initializeAuthentication() {
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (event === 'PASSWORD_RECOVERY') {
+      passwordRecoveryMode = true;
+      authUser = session?.user || null;
+      authReady = true;
+      setGateMessage('');
+      renderRoute();
+      return;
+    }
+    queueMicrotask(() => { void handleAuthenticatedSession(session); });
+  });
+  const { data, error } = await supabase.auth.getSession();
+  if (error) {
+    authReady = true;
+    setGateMessage(error.message, true);
+    renderRoute();
+    return;
+  }
+  await handleAuthenticatedSession(data.session);
+}
+
+async function handleAuthForm(form) {
+  const values = new FormData(form);
+  const email = String(values.get('email') || '').trim().toLowerCase();
+  const password = String(values.get('password') || '');
+  const message = form.querySelector('.access-message');
+  if (message) { message.textContent = ''; message.classList.remove('error'); }
+  try {
+    if (form.dataset.authForm === 'login') {
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) throw error;
+      setGateMessage('Acceso correcto. Cargando tus equipos…');
+    } else if (form.dataset.authForm === 'register') {
+      const fullName = String(values.get('fullName') || '').trim();
+      const { data, error } = await supabase.auth.signUp({
+        email, password,
+        options: {
+          data: { full_name: fullName },
+          emailRedirectTo: authRedirectUrl(true)
+        }
+      });
+      if (error) throw error;
+      if (!data.session) {
+        authMode = 'login';
+        setGateMessage('Cuenta creada. Revisa tu correo para confirmar el registro.');
+        renderRoute();
+      }
+    } else if (form.dataset.authForm === 'reset') {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: authRedirectUrl()
+      });
+      if (error) throw error;
+      setGateMessage('Si el correo está registrado, recibirás un enlace para recuperar la cuenta.');
+      renderRoute();
+    } else if (form.dataset.authForm === 'new-password') {
+      const { error } = await supabase.auth.updateUser({ password });
+      if (error) throw error;
+      passwordRecoveryMode = false;
+      setGateMessage('Contraseña actualizada. Ya puedes continuar.');
+      await handleAuthenticatedSession((await supabase.auth.getSession()).data.session);
+    }
+  } catch (error) {
+    if (message) { message.textContent = error.message || 'No se pudo completar la operación.'; message.classList.add('error'); }
+  }
+}
+
+async function selectWorkspace(workspaceId) {
+  const workspace = availableWorkspaces.find(item => item.id === workspaceId);
+  if (!workspace) return;
+  authReady = false;
+  app.innerHTML = renderLoadingScreen(`Abriendo ${workspace.name}…`);
+  try {
+    await activateCloudWorkspace(workspace);
+    setGateMessage('');
+    if (currentRoute().name === 'account') void refreshWorkspaceMembers();
+  } catch (error) {
+    authReady = true;
+    setGateMessage(`No se pudo cargar el equipo. ${error.message || ''}`, true);
+    renderRoute();
+  }
+}
+
+async function refreshWorkspaceMembers() {
+  if (!activeWorkspace) return;
+  try {
+    workspaceMembers = await listWorkspaceMembers(supabase, activeWorkspace.id);
+    if (currentRoute().name === 'account') renderRoute();
+  } catch (error) {
+    showToast(error.message || 'No se pudo cargar la lista de miembros.', 'error');
+  }
+}
+
+async function submitWorkspaceCreate(form) {
+  const values = new FormData(form);
+  const legacy = readStore();
+  const shouldImport = values.get('importLocal') === 'on';
+  const workspaceId = await createWorkspace(supabase, String(values.get('name') || '').trim());
+  availableWorkspaces = await listWorkspaces(supabase);
+  const workspace = availableWorkspaces.find(item => item.id === workspaceId);
+  if (!workspace) throw new Error('El equipo se creó, pero no apareció en la lista de acceso.');
+  const loaded = await loadWorkspaceDocument(supabase, workspace.id);
+  const initialDocument = shouldImport ? legacy : loaded.document;
+  activateWorkspaceStore({ client: supabase, workspaceId: workspace.id, role: workspace.role, revision: loaded.revision, document: initialDocument });
+  activeWorkspace = workspace;
+  localStorage.setItem(`estadisticas-chile:active-workspace:${authUser.id}`, workspace.id);
+  workspaceMembers = await listWorkspaceMembers(supabase, workspace.id);
+  if (shouldImport) replaceActiveStore(legacy, { sync: true });
+  setGateMessage('');
+  navigate('#dashboard');
+  renderRoute();
+  showToast(shouldImport ? 'Equipo creado y datos importados' : 'Espacio de trabajo creado');
+}
+
+async function submitWorkspaceInvite(form) {
+  if (!activeWorkspace) throw new Error('Selecciona un equipo primero.');
+  const role = String(new FormData(form).get('role') || 'scorer');
+  const token = Array.from(crypto.getRandomValues(new Uint8Array(32)), byte => byte.toString(16).padStart(2, '0')).join('');
+  const tokenHash = await hashInviteToken(token);
+  await createWorkspaceInvite(supabase, activeWorkspace.id, tokenHash, role);
+  const link = new URL(window.location.href);
+  link.searchParams.set('invite', token);
+  link.hash = '#dashboard';
+  const result = document.querySelector('#invite-result');
+  if (result) {
+    result.hidden = false;
+    result.innerHTML = `<label for="invite-link">Comparte este enlace. Se podrá usar una vez y vence en 7 días.</label><input id="invite-link" readonly value="${escapeAttribute(link.toString())}"><button class="button button-small button-secondary" type="button" data-auth-action="copy-invite">Copiar enlace</button>`;
+  }
+  setFormMessage(form, 'Enlace creado. Compártelo con la persona que se unirá.');
+}
+
+function escapeAttribute(value) {
+  return String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 }
 
 function stopClock(persist = true) {
@@ -1349,7 +1903,7 @@ function startClock(matchId) {
         match.clockSeconds -= 1;
         for (const line of match.players) if (line.onCourt) line.secondsPlayed += 1;
         if (match.clockSeconds === 0) { match.clockRunning = false; ended = true; }
-      });
+      }, { sync: false });
       if (currentRoute().name === 'match' && currentRoute().id === matchId) updateClockDisplay(matchId);
       if (ended) {
         stopClock(false);
@@ -1504,6 +2058,12 @@ function submitTournamentForm(form) {
 }
 
 async function onSubmit(event) {
+  const authForm = event.target.closest('form[data-auth-form]');
+  if (authForm) {
+    event.preventDefault();
+    await handleAuthForm(authForm);
+    return;
+  }
   const form = event.target.closest('form[data-form]');
   if (!form) return;
   event.preventDefault();
@@ -1513,6 +2073,8 @@ async function onSubmit(event) {
     if (form.dataset.form === 'player') await submitPlayerForm(form);
     if (form.dataset.form === 'match') submitMatchForm(form);
     if (form.dataset.form === 'tournament') submitTournamentForm(form);
+    if (form.dataset.form === 'workspace-create') await submitWorkspaceCreate(form);
+    if (form.dataset.form === 'workspace-invite') await submitWorkspaceInvite(form);
   } catch (error) {
     setFormMessage(form, error.message || 'No se pudo guardar. Revisa los datos e inténtalo otra vez.', true);
   }
@@ -1587,6 +2149,39 @@ function handleMatchAction(matchId, action) {
 }
 
 function onClick(event) {
+  const authModeButton = event.target.closest('[data-auth-mode]');
+  if (authModeButton) {
+    authMode = authModeButton.dataset.authMode;
+    setGateMessage('');
+    renderRoute();
+    return;
+  }
+
+  const authAction = event.target.closest('[data-auth-action]');
+  if (authAction) {
+    const action = authAction.dataset.authAction;
+    if (action === 'sign-out') {
+      void supabase.auth.signOut().then(({ error }) => {
+        if (error) showToast(error.message, 'error');
+      });
+    } else if (action === 'switch-workspace') {
+      activeWorkspace = null;
+      workspaceMembers = [];
+      deactivateWorkspaceStore();
+      renderRoute();
+    } else if (action === 'copy-invite') {
+      const link = document.querySelector('#invite-link')?.value;
+      if (link) navigator.clipboard.writeText(link).then(() => showToast('Enlace copiado')).catch(() => showToast('Selecciona y copia el enlace manualmente.', 'info'));
+    }
+    return;
+  }
+
+  const workspaceButton = event.target.closest('[data-open-workspace]');
+  if (workspaceButton) {
+    void selectWorkspace(workspaceButton.dataset.openWorkspace);
+    return;
+  }
+
   const navLink = event.target.closest('.nav-link');
   if (navLink) {
     document.querySelector('.app-shell')?.classList.remove('menu-open');
@@ -1655,15 +2250,95 @@ function handleRouteChange() {
   const route = currentRoute();
   if (clockInterval && (route.name !== 'match' || route.id !== clockMatchId)) stopClock(true);
   renderRoute();
+  if (route.name === 'account' && activeWorkspace) void refreshWorkspaceMembers();
 }
+
+window.addEventListener('ec:workspace-change', event => {
+  if (activeWorkspace && ['remote', 'conflict'].includes(event.detail?.reason)) {
+    renderRoute();
+    showToast(event.detail.reason === 'conflict' ? 'Otro miembro guardó cambios. Se cargaron los datos más recientes; revisa y vuelve a intentar tu acción.' : 'El equipo se actualizó desde otro dispositivo.', 'info');
+  }
+});
+window.addEventListener('ec:workspace-error', event => {
+  showToast(`No se pudo sincronizar: ${event.detail?.message || 'comprueba tu conexión.'}`, 'error');
+});
+window.addEventListener('ec:workspace-conflict', () => {
+  if (activeWorkspace) renderRoute();
+});
 
 app.addEventListener('click', onClick);
 app.addEventListener('submit', onSubmit);
 window.addEventListener('hashchange', handleRouteChange);
 window.addEventListener('pagehide', () => stopClock(true));
 renderRoute();
+void initializeAuthentication();
 
 
+  },
+  "src/pages/access.js": function(exports, require) {
+const { escapeHtml } = require("src/utils/dom.js");
+const roleNames = { owner: 'Propietario', admin: 'Administrador', scorer: 'Anotador', viewer: 'Solo lectura' };
+
+function renderLoadingScreen(message = 'Conectando con tu equipo…') {
+  return `<main class="access-screen"><div class="access-card access-loading"><span class="brand-mark">EC</span><h1>ESTADÍSTICAS CHILE</h1><p>${escapeHtml(message)}</p><span class="access-spinner" aria-hidden="true"></span></div></main>`;
+}
+
+function renderAuthScreen(mode = 'login', { message = '', error = false, invitePending = false } = {}) {
+  const title = mode === 'register' ? 'Crea tu cuenta' : mode === 'reset' ? 'Recupera tu acceso' : mode === 'password' ? 'Define una contraseña nueva' : 'Inicia sesión';
+  const description = mode === 'register'
+    ? 'Regístrate para crear un equipo o unirte a uno.'
+    : mode === 'reset' ? 'Te enviaremos un enlace para restablecer tu contraseña.'
+      : mode === 'password' ? 'La contraseña nueva debe tener al menos ocho caracteres.'
+        : invitePending ? 'Inicia sesión o crea una cuenta para aceptar la invitación.' : 'Accede a los equipos y estadísticas compartidas.';
+  const showEmail = mode !== 'password';
+  const showPassword = mode === 'login' || mode === 'register' || mode === 'password';
+  const showName = mode === 'register';
+  const formMode = mode === 'password' ? 'new-password' : mode;
+  const submitLabel = mode === 'register' ? 'Crear cuenta' : mode === 'reset' ? 'Enviar enlace' : mode === 'password' ? 'Guardar contraseña' : 'Entrar';
+  const switchButton = mode === 'register'
+    ? '<button class="access-link" type="button" data-auth-mode="login">Ya tengo cuenta</button>'
+    : mode === 'login' ? '<button class="access-link" type="button" data-auth-mode="register">Crear cuenta</button>' : '';
+
+  return `<main class="access-screen"><section class="access-card">
+    <a class="access-brand" href="#dashboard"><span class="brand-mark">EC</span><span><b>ESTADÍSTICAS</b><small>CHILE · BÁSQUETBOL</small></span></a>
+    <div class="access-heading"><span class="eyebrow">PLATAFORMA COLABORATIVA</span><h1>${title}</h1><p>${description}</p></div>
+    <form class="access-form" data-auth-form="${formMode}">
+      ${showName ? '<label class="field"><span>Tu nombre</span><input name="fullName" autocomplete="name" required maxlength="70" placeholder="Nombre y apellido"></label>' : ''}
+      ${showEmail ? '<label class="field"><span>Correo electrónico</span><input name="email" type="email" autocomplete="email" required maxlength="254" placeholder="tu@correo.cl"></label>' : ''}
+      ${showPassword ? `<label class="field"><span>${mode === 'password' ? 'Nueva contraseña' : 'Contraseña'}</span><input name="password" type="password" autocomplete="${mode === 'register' ? 'new-password' : 'current-password'}" required minlength="8" placeholder="Mínimo 8 caracteres"></label>` : ''}
+      <button class="button button-primary access-submit" type="submit">${submitLabel}</button>
+      <p class="access-message ${error ? 'error' : ''}" role="status">${escapeHtml(message)}</p>
+    </form>
+    <div class="access-actions">${switchButton}${mode === 'login' ? '<button class="access-link" type="button" data-auth-mode="reset">Olvidé mi contraseña</button>' : ''}${mode === 'reset' ? '<button class="access-link" type="button" data-auth-mode="login">Volver al inicio de sesión</button>' : ''}</div>
+    <p class="access-footnote">Tus estadísticas se comparten solo con las personas que pertenecen a tu equipo.</p>
+  </section></main>`;
+}
+
+function renderWorkspaceGate({ user, workspaces, hasLocalData, message = '', error = false }) {
+  const choices = workspaces.length ? `<div class="workspace-list">${workspaces.map(workspace => `<button class="workspace-choice" type="button" data-open-workspace="${escapeHtml(workspace.id)}"><span class="workspace-choice-mark">${escapeHtml(workspace.name.slice(0, 1).toUpperCase())}</span><span class="workspace-choice-copy"><b>${escapeHtml(workspace.name)}</b><small>${roleNames[workspace.role] || 'Miembro'}</small></span><span class="workspace-arrow">→</span></button>`).join('')}</div>` : '<div class="workspace-empty"><b>Aún no tienes un equipo compartido</b><span>Crea uno para guardar aquí tus equipos deportivos, jugadores y partidos.</span></div>';
+  return `<main class="access-screen workspace-screen"><section class="access-card workspace-gate">
+    <div class="gate-topline"><a class="access-brand" href="#dashboard"><span class="brand-mark">EC</span><span><b>ESTADÍSTICAS</b><small>CHILE · BÁSQUETBOL</small></span></a><button class="access-link" type="button" data-auth-action="sign-out">Cerrar sesión</button></div>
+    <div class="access-heading"><span class="eyebrow">CUENTA: ${escapeHtml(user.email || '')}</span><h1>Elige tu equipo</h1><p>Los miembros de un equipo comparten sus equipos deportivos, jugadores, partidos y estadísticas.</p></div>
+    ${message ? `<p class="access-message ${error ? 'error' : ''}" role="status">${escapeHtml(message)}</p>` : ''}
+    ${choices}
+    <div class="workspace-create"><h2>Crear un espacio de trabajo</h2><form class="form-grid" data-form="workspace-create"><label class="field field-full"><span>Nombre del equipo o club</span><input name="name" required maxlength="80" placeholder="Ej. Club Deportivo Curicó"></label>${hasLocalData ? '<label class="workspace-import field-full"><input type="checkbox" name="importLocal" checked><span>Importar equipos y estadísticas guardados en este navegador</span></label>' : ''}<button class="button button-primary field-full" type="submit">Crear espacio</button><div class="form-message field-full" role="status"></div></form></div>
+    <p class="access-footnote">¿Te invitaron? Abre el enlace de invitación en este navegador después de iniciar sesión.</p>
+  </section></main>`;
+}
+
+function renderWorkspaceManagement({ workspace, members, user }) {
+  const isManager = ['owner', 'admin'].includes(workspace.role);
+  const memberRows = members.map(member => `<article class="member-row"><span class="member-avatar">${escapeHtml((member.display_name || 'U').slice(0, 1).toUpperCase())}</span><span class="member-copy"><b>${escapeHtml(member.display_name || 'Miembro')}</b><small>${member.user_id === user.id ? 'Tú · ' : ''}${roleNames[member.role] || 'Miembro'} · desde ${new Intl.DateTimeFormat('es-CL', { dateStyle: 'medium' }).format(new Date(member.joined_at))}</small></span></article>`).join('');
+  return `<section class="content-card card workspace-management">
+    <div class="section-header"><div><span class="eyebrow">COLABORACIÓN</span><h2>${escapeHtml(workspace.name)}</h2><p>Comparte el trabajo con quienes registran y revisan las estadísticas.</p></div></div>
+    <div class="workspace-permissions"><span><b>${roleNames[workspace.role] || 'Miembro'}</b> es tu rol</span><span>Los cambios del equipo se sincronizan entre sus miembros.</span></div>
+    <div class="workspace-management-grid"><section><div class="section-header"><div><h3>Miembros</h3><p>${members.length} persona${members.length === 1 ? '' : 's'} en este equipo.</p></div></div><div class="member-list">${memberRows || '<p class="muted">Todavía no hay miembros.</p>'}</div></section>
+    <section><div class="section-header"><div><h3>Invitar a alguien</h3><p>Genera un enlace privado válido por 7 días.</p></div></div>${isManager ? `<form class="form-grid invite-form" data-form="workspace-invite"><label class="field field-full"><span>Permiso</span><select name="role"><option value="scorer">Anotador · registra y modifica estadísticas</option><option value="viewer">Solo lectura · consulta los datos</option>${workspace.role === 'owner' ? '<option value="admin">Administrador · gestiona el equipo e invita</option>' : ''}</select></label><button class="button button-primary field-full" type="submit">Crear enlace de invitación</button><div class="form-message field-full" role="status"></div></form><div class="invite-result" id="invite-result" hidden></div>` : '<p class="muted">Solo propietarios y administradores pueden invitar personas.</p>'}</section></div>
+  </section>`;
+}
+
+
+Object.assign(exports, { renderLoadingScreen, renderAuthScreen, renderWorkspaceGate, renderWorkspaceManagement });
   },
   "src/pages/dashboard.js": function(exports, require) {
 const { pageHeading, statusBadge, teamMark, emptyState } = require("src/components/ui.js");
@@ -2114,7 +2789,7 @@ function currentRoute() {
   if (parts[0] === 'player') return { name: 'profile', id: parts[1] || null, mode: null };
   if (parts[0] === 'match') return { name: 'match', id: parts[1] || null, mode: null };
   if (parts[0] === 'tournament') return { name: 'tournament', id: parts[1] || null, mode: null };
-  if (['dashboard', 'players', 'matches', 'teams', 'tournaments'].includes(parts[0])) return { name: parts[0], id: null, mode: null };
+  if (['dashboard', 'players', 'matches', 'teams', 'tournaments', 'account'].includes(parts[0])) return { name: parts[0], id: null, mode: null };
   return { name: 'not-found', id: null, mode: null };
 }
 
@@ -2165,7 +2840,9 @@ Object.assign(exports, { escapeHtml, localDateValue, formatDate, formatClock, in
   }
 };
 const cache = Object.create(null);
+const externals = new Map([['@supabase/supabase-js', await import('https://esm.sh/@supabase/supabase-js@2')]]);
 function requireModule(id) {
+  if (externals.has(id)) return externals.get(id);
   if (cache[id]) return cache[id].exports;
   const factory = modules[id];
   if (!factory) throw new Error('Módulo no encontrado: ' + id);
@@ -2174,7 +2851,13 @@ function requireModule(id) {
   factory(module.exports, requireModule);
   return module.exports;
 }
-requireModule('src/main.js');
+try {
+  requireModule('src/main.js');
+} catch (error) {
+  const root = document.querySelector('#app');
+  if (root) root.textContent = 'No se pudo iniciar la aplicación. Comprueba tu conexión e inténtalo otra vez.';
+  console.error(error);
+}
   </script>
 </body>
 </html>
