@@ -625,6 +625,320 @@ input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible
   .tournament-game-teams { grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); }
 }
 
+/* Neon night theme: Estadísticas Chile */
+:root {
+  color-scheme: dark;
+  --ink: #f7f2ff;
+  --ink-2: #d8cce9;
+  --muted: #aa9fba;
+  --muted-light: #796f8d;
+  --line: rgba(191, 119, 255, .2);
+  --paper: rgba(19, 12, 34, .88);
+  --canvas: #08060f;
+  --green: #bb4bff;
+  --green-dark: #8630e8;
+  --green-soft: rgba(187, 75, 255, .15);
+  --blue: #6b9cff;
+  --red: #ff527a;
+  --shadow: 0 18px 45px rgba(0, 0, 0, .3);
+  background: var(--canvas);
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(900px 540px at 84% -12%, rgba(136, 43, 236, .28), transparent 63%),
+    radial-gradient(650px 520px at -10% 58%, rgba(53, 70, 211, .18), transparent 65%),
+    #08060f;
+}
+
+input:focus-visible, select:focus-visible, button:focus-visible, a:focus-visible {
+  outline-color: rgba(224, 104, 255, .8);
+}
+
+.sidebar {
+  border-right: 1px solid rgba(207, 132, 255, .15);
+  background:
+    radial-gradient(300px 330px at 0 0, rgba(162, 45, 255, .27), transparent 70%),
+    linear-gradient(165deg, #120b22 0%, #0c0817 59%, #140a27 100%);
+  box-shadow: 14px 0 38px rgba(0, 0, 0, .27);
+}
+.brand-mark {
+  color: #fff;
+  background: linear-gradient(135deg, #6c37ee, #d338ff 60%, #ff6ca8);
+  box-shadow: 0 8px 22px rgba(192, 56, 255, .35);
+}
+.brand small { color: #b79ac8; }
+.nav-caption { color: #826b96; }
+.nav-link { color: #c7b8d8; }
+.nav-link:hover { background: rgba(255, 255, 255, .055); }
+.nav-link.active {
+  border-color: rgba(222, 110, 255, .32);
+  background: linear-gradient(100deg, rgba(174, 57, 255, .28), rgba(70, 58, 213, .16));
+  box-shadow: inset 3px 0 #e35bff, 0 6px 18px rgba(138, 43, 222, .14);
+}
+.nav-icon { color: #d08dff; }
+.sidebar-bottom { border-color: rgba(255, 255, 255, .09); }
+.local-indicator { background: #75eecc; box-shadow: 0 0 0 4px rgba(117, 238, 204, .12), 0 0 14px rgba(117, 238, 204, .55); }
+.sidebar-bottom small { color: #a793b7; }
+
+.main-area { background: transparent; }
+.topbar {
+  border-color: rgba(191, 119, 255, .14);
+  background: rgba(9, 6, 17, .78);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .14);
+}
+.topbar-kicker, .topbar-account > span { color: #aa8fbc; }
+.topbar strong { color: #fff; }
+.local-chip {
+  border-color: rgba(184, 110, 255, .3);
+  color: #d7c5e7;
+  background: rgba(120, 54, 185, .14);
+}
+.local-chip i { background: #77f1d0; box-shadow: 0 0 0 3px rgba(119, 241, 208, .14), 0 0 12px rgba(119, 241, 208, .55); }
+.mobile-brand { color: #f6efff; }
+.page-content { position: relative; }
+.page-content::before {
+  position: fixed;
+  z-index: -1;
+  top: 94px;
+  right: 5%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(166, 49, 255, .12);
+  filter: blur(70px);
+  content: '';
+  pointer-events: none;
+}
+.page-heading h1, .section-header h2, .content-card > h2 { color: #fbf7ff; }
+.page-heading p, .section-header p { color: #ac9fba; }
+.eyebrow { color: #d66cff; }
+
+.card {
+  border-color: rgba(191, 119, 255, .21);
+  background: linear-gradient(145deg, rgba(26, 17, 46, .95), rgba(13, 9, 25, .9));
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, .035);
+}
+.button {
+  border-radius: 11px;
+  letter-spacing: .01em;
+}
+.button-primary {
+  background: linear-gradient(135deg, #7145ec, #b63cf5 58%, #e953c8);
+  box-shadow: 0 8px 20px rgba(184, 60, 245, .27), inset 0 1px 0 rgba(255, 255, 255, .18);
+}
+.button-primary:hover { background: linear-gradient(135deg, #8755ff, #cb50ff 58%, #ff67d7); }
+.button-secondary {
+  border-color: rgba(196, 132, 255, .27);
+  color: #e5d8ef;
+  background: rgba(255, 255, 255, .045);
+}
+.button-secondary:hover { border-color: rgba(225, 120, 255, .58); background: rgba(172, 68, 241, .14); }
+.button-danger { background: linear-gradient(135deg, #d33370, #ff4f82); }
+.button-warning { color: #fff1d2; background: linear-gradient(135deg, #a95b20, #d9943b); }
+.text-link { color: #d46dff; }
+
+.summary-card { background: linear-gradient(145deg, rgba(33, 21, 58, .92), rgba(17, 11, 31, .96)); }
+.summary-card span { color: #b3a1c2; }
+.summary-card strong { color: #fff; }
+.summary-card small { color: #83758e; }
+.summary-icon {
+  color: #f3e8ff;
+  background: linear-gradient(145deg, rgba(128, 69, 235, .34), rgba(224, 64, 236, .2)) !important;
+  box-shadow: inset 0 0 0 1px rgba(225, 132, 255, .15);
+}
+.live-banner, .tournament-dashboard-banner {
+  border-color: rgba(212, 100, 255, .32);
+  background:
+    radial-gradient(circle at 93% 0, rgba(214, 66, 255, .22), transparent 38%),
+    linear-gradient(105deg, rgba(45, 22, 76, .95), rgba(18, 12, 34, .96));
+}
+.live-banner h2, .tournament-dashboard-banner h2 { color: #fff; }
+.live-banner p, .tournament-dashboard-banner p { color: #b9a9c8; }
+.tournament-dashboard-icon { color: #f4dbff; background: rgba(190, 69, 249, .24); }
+
+.match-row, .match-card, .detail-stat, .entity-row, .result-player { border-color: rgba(191, 119, 255, .15); }
+.match-row:hover, .match-card:hover { background: rgba(181, 83, 247, .07); }
+.match-date, .entity-main span, .entity-meta, .match-card-meta, .match-card-footer > small, .result-player { color: #aa9fba; }
+.match-side small, .scheduled-teams > div small { color: #a999b5; }
+.team-mark { border-color: rgba(206, 132, 255, .25); color: var(--team-color, #e2b3ff); background: rgba(156, 67, 222, .13); }
+.status-badge { color: #b5a7c2; }
+.status-live { color: #ff82ad; }
+.status-final { color: #79e8c4; }
+.quick-link {
+  border-color: rgba(191, 119, 255, .18);
+  background: linear-gradient(145deg, rgba(30, 19, 52, .95), rgba(16, 10, 28, .95));
+}
+.quick-link:hover { border-color: rgba(218, 111, 255, .63); box-shadow: 0 12px 28px rgba(104, 37, 158, .18); }
+.quick-link > span { color: #e5c8ff; background: rgba(176, 65, 255, .18); }
+.quick-link b { color: #f5effb; }
+.quick-link-tournament > span { color: #ffd397; background: rgba(222, 145, 56, .17); }
+
+.field { color: #d9cae4; }
+.field > span small, .field-help { color: #8f819e; }
+.field input, .field select, .tournament-form input:not([type="checkbox"]), .tournament-form select {
+  border-color: rgba(191, 119, 255, .23);
+  color: #f4ecfb;
+  background: rgba(7, 5, 14, .52);
+}
+.field input:focus, .field select:focus {
+  border-color: #d269ff;
+  box-shadow: 0 0 0 3px rgba(205, 87, 255, .16), 0 0 18px rgba(191, 68, 255, .1);
+}
+.form-message { color: #81ebc5; }
+.data-table th { border-color: rgba(191, 119, 255, .16); color: #bca9ca; background: rgba(126, 56, 180, .13); }
+.data-table td { border-color: rgba(191, 119, 255, .12); color: #ded3e7; }
+.data-table tbody tr:hover td { background: rgba(182, 77, 245, .09); }
+.player-avatar { border-color: rgba(205, 133, 255, .27); color: #e6c7ff; background: rgba(169, 64, 235, .18); }
+.empty-icon { color: #e4c8ff; background: rgba(176, 65, 255, .18); }
+.empty-state p, .scheduled-match p { color: #a99ab7; }
+.detail-stat { background: rgba(255, 255, 255, .018); }
+.detail-stat span, .detail-stat small, .profile-stat span { color: #a798b4; }
+.detail-stat b, .result-player b { color: #f1e7f8; }
+.profile-stat small { color: #c47cff; }
+.match-score i, .final-result > i { color: #93829f; }
+
+/* Live scoring desk */
+.live-match-console {
+  --console-ink: #f7efff;
+  --console-muted: #b4a2c5;
+  --console-line: rgba(186, 103, 255, .23);
+  border-color: rgba(200, 99, 255, .35);
+  background:
+    radial-gradient(ellipse at 50% -20%, rgba(180, 52, 255, .38), transparent 49%),
+    radial-gradient(ellipse at 100% 30%, rgba(42, 96, 236, .16), transparent 45%),
+    linear-gradient(155deg, #150b2a, #0c0718 63%, #10081d);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, .38), 0 0 0 1px rgba(224, 112, 255, .05) inset;
+}
+.live-match-console .card { border-color: var(--console-line); background: linear-gradient(145deg, rgba(27, 14, 48, .92), rgba(10, 6, 21, .95)); }
+.live-scoreboard {
+  border: 1px solid rgba(208, 112, 255, .28);
+  background:
+    radial-gradient(circle at 10% 50%, rgba(69, 95, 250, .2), transparent 28%),
+    radial-gradient(circle at 91% 50%, rgba(236, 55, 169, .2), transparent 28%),
+    linear-gradient(105deg, #120a28, #180c2e 52%, #260d2a) !important;
+}
+.score-center { border-color: rgba(218, 126, 255, .22); }
+.quarter-label { color: #d6b5ea; }
+.score-center > strong { text-shadow: 0 0 22px rgba(221, 103, 255, .35); }
+.clock-state { color: #af9fc0; }
+.score-side .score-value { color: #80b3ff; text-shadow: 0 0 22px rgba(94, 151, 255, .28); }
+.away-score-side .score-value { color: #ff6fa9; text-shadow: 0 0 22px rgba(255, 70, 152, .26); }
+.score-side .team-mark { border-color: color-mix(in srgb, var(--team-color, #c278ff) 65%, white); background: rgba(255, 255, 255, .9); }
+.score-controls .button { border-color: rgba(191, 119, 255, .31); color: #f0e5fb; background: rgba(125, 59, 184, .18); }
+.score-controls .button-primary { border-color: #c65cff; background: linear-gradient(135deg, #7c3de2, #c73eeb); }
+.score-controls .button-warning { border-color: #cc8d36; background: #835119; }
+.live-roster-table th, .live-roster-table tfoot th, .live-roster-table tfoot td { background: rgba(111, 52, 160, .16); }
+.live-roster-table td { border-color: rgba(191, 119, 255, .13); color: #e9ddf5; }
+.live-roster-table tbody tr.selected td { background: color-mix(in srgb, var(--roster-color, #b148fa) 24%, #130b25); }
+.lineup-toggle { border-color: rgba(192, 122, 255, .28); color: #c5b1d6; background: rgba(118, 54, 178, .16); }
+.live-action { border-color: rgba(194, 116, 255, .25); color: #f0e6f9; background: rgba(111, 48, 157, .13); }
+.live-action:hover { border-color: #d66bff; background: rgba(178, 60, 241, .24); }
+.live-action.score-action { border-color: #d569ff; background: linear-gradient(145deg, #663be0, #a837ed 58%, #dd49c9); }
+.selected-player-stats > div { border-color: rgba(191, 119, 255, .2); background: rgba(127, 55, 185, .13); }
+.selected-status { border-color: rgba(198, 122, 255, .29); color: #d4c0e5; }
+.selected-status.in-court { border-color: rgba(102, 237, 190, .48); color: #a8f4d2; background: rgba(44, 130, 102, .2); }
+.period-table th, .period-table td, .event-row { border-color: rgba(191, 119, 255, .16); }
+.period-table thead th, .period-table tbody th { background: rgba(113, 53, 165, .17); }
+.finish-button { background: linear-gradient(135deg, #bf2c6a, #ef4e8c); }
+
+/* Tournament workspace */
+.tournament-intro {
+  border-color: rgba(215, 104, 255, .43);
+  background:
+    radial-gradient(circle at 82% 45%, rgba(208, 57, 255, .45), transparent 24%),
+    radial-gradient(circle at 98% 0, rgba(68, 89, 239, .42), transparent 31%),
+    linear-gradient(115deg, #150928, #21113e 61%, #29103f);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, .28);
+}
+.tournament-intro h2 em { color: #ef7dff; text-shadow: 0 0 20px rgba(224, 78, 255, .38); }
+.tournament-intro p { color: #ccb9dc; }
+.tournament-kicker { color: #e58aff; }
+.tournament-format-chips span { border-color: rgba(238, 154, 255, .24); background: rgba(255, 255, 255, .055); }
+.tournament-intro-ball { border-color: rgba(239, 165, 255, .29); background: linear-gradient(145deg, rgba(245, 125, 255, .22), rgba(81, 87, 232, .1)); box-shadow: 0 0 0 15px rgba(236, 111, 255, .05), 0 18px 36px rgba(0, 0, 0, .32); }
+.tournament-create-card .section-header h2, .tournament-list-card .section-header h2, .tournament-card-title { color: #f7f1fd; }
+.tournament-step, .tournament-format-badge { border-color: rgba(196, 121, 255, .27); color: #ddb8ff; background: rgba(128, 58, 188, .14); }
+.tournament-team-picker { border-color: rgba(191, 119, 255, .18); background: rgba(91, 42, 136, .09); }
+.tournament-team-option, .tournament-card { border-color: rgba(191, 119, 255, .18); background: rgba(255, 255, 255, .025); }
+.tournament-team-option:hover, .tournament-card:hover { border-color: rgba(218, 111, 255, .58); }
+.tournament-team-option:has(input:checked) { border-color: #d66bff; background: rgba(180, 65, 244, .15); box-shadow: 0 0 0 2px rgba(203, 94, 255, .11); }
+.tournament-team-check { border-color: rgba(205, 132, 255, .35); background: #120a20; }
+.tournament-team-option:has(input:checked) .tournament-team-check { border-color: #c154f5; background: #b845e9; }
+.tournament-team-copy b { color: #eee4f6; }
+.tournament-team-copy small, .tournament-card-meta, .tournament-status, .tournament-team-strip small { color: #aa9fba; }
+.tournament-rules span { color: #c3b2d1; background: rgba(141, 76, 192, .13); }
+.tournament-champion-line { color: #ffe2a9; background: rgba(186, 123, 28, .16); }
+.tournament-champion-line b { color: #fff0ce; }
+.tournament-card-link { border-color: rgba(191, 119, 255, .14); color: #d26bff; }
+.tournament-detail-hero { border-color: rgba(215, 104, 255, .39); background: linear-gradient(110deg, #160a28, #291249 70%, #37104b); }
+.tournament-detail-main p, .tournament-progress > span { color: #c9b6d9; }
+.tournament-progress strong small { color: #d490fa; }
+
+/* Account and shared workspace */
+.access-screen {
+  background:
+    radial-gradient(780px 500px at 18% 10%, rgba(106, 49, 205, .32), transparent 65%),
+    radial-gradient(680px 500px at 85% 95%, rgba(227, 51, 199, .18), transparent 64%),
+    #08060f;
+}
+.access-card {
+  border-color: rgba(211, 123, 255, .24);
+  color: #f6effd;
+  background: linear-gradient(145deg, rgba(28, 18, 49, .94), rgba(12, 8, 23, .96));
+  box-shadow: 0 28px 70px rgba(0, 0, 0, .4), inset 0 1px 0 rgba(255, 255, 255, .055);
+}
+.access-brand { color: #f7effe; }
+.access-brand small, .access-subtitle, .access-footnote, .workspace-empty, .workspace-empty span, .muted { color: #ad9dbb; }
+.access-brand-mark { color: #fff; background: linear-gradient(135deg, #7139ec, #cd3fff 58%, #ff68ad); }
+.access-heading, .workspace-create h2, .workspace-management .section-header h2, .workspace-management .section-header h3 { color: #fff; }
+.access-heading .eyebrow, .workspace-management .eyebrow { color: #df7dff; }
+.access-heading h1 { color: #fbf5ff; }
+.access-heading p, .workspace-management .section-header p { color: #b7a8c5; }
+.access-form .field, .workspace-gate .field { color: #d8c9e3; }
+.access-form input, .workspace-gate input:not([type=checkbox]), .workspace-gate select, .invite-result input { border-color: rgba(191, 119, 255, .25); color: #f8f0ff; background: rgba(7, 5, 14, .56); }
+.access-form input:focus, .workspace-gate input:focus, .workspace-gate select:focus { outline-color: rgba(219, 102, 255, .7); }
+.access-message { color: #83ecc7; }
+.access-message.error, .form-message.error { color: #ff91aa; }
+.access-link { color: #df86ff; }
+.access-footnote, .workspace-create, .member-row { border-color: rgba(191, 119, 255, .15); }
+.workspace-choice { border-color: rgba(191, 119, 255, .22); background: rgba(255, 255, 255, .03); }
+.workspace-choice:hover { border-color: rgba(219, 107, 255, .6); background: rgba(166, 61, 225, .13); }
+.workspace-choice-mark, .member-avatar { color: #efd7ff; background: rgba(170, 66, 233, .2); }
+.workspace-choice-copy b, .member-copy b { color: #f4ecfa; }
+.workspace-choice-copy small, .member-copy small { color: #a99ab7; }
+.workspace-arrow { color: #df85ff; }
+.workspace-permissions { border-color: rgba(191, 119, 255, .18); color: #b8a9c5; background: rgba(154, 59, 212, .09); }
+.workspace-permissions b { color: #e29dff; }
+.invite-result { border-color: rgba(109, 230, 182, .35); background: rgba(36, 126, 96, .13); }
+.invite-result label { color: #b8e9d4; }
+.cloud-indicator { background: #6fe6c0 !important; box-shadow: 0 0 0 4px rgba(111, 230, 192, .13), 0 0 12px rgba(111, 230, 192, .44); }
+
+.workspace-join {
+  margin: 22px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid rgba(191, 119, 255, .15);
+}
+.workspace-join h2 { margin: 0; color: #fff; font: 800 14px Manrope, sans-serif; }
+.workspace-join > p { margin: 6px 0 12px; color: #ad9dbb; font-size: 10px; line-height: 1.55; }
+.workspace-join-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 10px; }
+.workspace-join-form .form-message { grid-column: 1 / -1; }
+.workspace-join-form .button { min-height: 42px; }
+.member-row-linked { align-items: flex-start; }
+.member-player-state { display: block; margin-top: 4px; color: #b69cc8; font-size: 9px; line-height: 1.45; }
+.member-link-form { display: grid; grid-template-columns: minmax(150px, 1fr) auto; align-items: end; gap: 7px; min-width: 245px; }
+.member-link-form label { display: grid; gap: 4px; color: #a99ab7; font-size: 8px; font-weight: 750; }
+.member-link-form select { width: 100%; min-height: 31px; padding: 5px 7px; border: 1px solid rgba(191, 119, 255, .25); border-radius: 7px; color: #f8f0ff; background: rgba(7, 5, 14, .56); font: inherit; font-size: 9px; }
+.member-link-form .button { min-height: 31px; }
+.member-link-form .form-message { grid-column: 1 / -1; }
+
+@media (max-width: 760px) {
+  .topbar { background: rgba(9, 6, 17, .9); }
+  .workspace-join-form, .member-link-form { grid-template-columns: 1fr; }
+  .member-link-form { width: 100%; min-width: 0; }
+  .member-row-linked { flex-wrap: wrap; }
+}
+
   </style>
 </head>
 <body>
@@ -935,11 +1249,12 @@ async function saveWorkspaceDocument(client, workspaceId, revision, document) {
   return Array.isArray(data) ? data[0] : data;
 }
 
-async function createWorkspaceInvite(client, workspaceId, tokenHash, role) {
+async function createWorkspaceInvite(client, workspaceId, tokenHash, role, maxUses = 25) {
   const { data, error } = await client.rpc('ec_create_workspace_invite', {
     p_workspace_id: workspaceId,
     p_token_hash: tokenHash,
-    p_role: role
+    p_role: role,
+    p_max_uses: maxUses
   });
   if (error) throw error;
   return Array.isArray(data) ? data[0] : data;
@@ -947,11 +1262,20 @@ async function createWorkspaceInvite(client, workspaceId, tokenHash, role) {
 
 async function listWorkspaceMembers(client, workspaceId) {
   const { data, error } = await client.from('ec_workspace_members')
-    .select('user_id,role,display_name,joined_at')
+    .select('user_id,role,display_name,joined_at,player_id')
     .eq('workspace_id', workspaceId)
     .order('joined_at');
   if (error) throw error;
   return data;
+}
+
+async function linkWorkspaceMemberPlayer(client, workspaceId, userId, playerId) {
+  const { error } = await client.rpc('ec_link_workspace_member_player', {
+    p_workspace_id: workspaceId,
+    p_user_id: userId,
+    p_player_id: playerId || null
+  });
+  if (error) throw error;
 }
 
 async function acceptWorkspaceInvite(client, tokenHash) {
@@ -970,7 +1294,7 @@ function subscribeToWorkspace(client, workspaceId, onChange) {
 }
 
 
-Object.assign(exports, { listWorkspaces, createWorkspace, loadWorkspaceDocument, saveWorkspaceDocument, createWorkspaceInvite, listWorkspaceMembers, acceptWorkspaceInvite, subscribeToWorkspace });
+Object.assign(exports, { listWorkspaces, createWorkspace, loadWorkspaceDocument, saveWorkspaceDocument, createWorkspaceInvite, listWorkspaceMembers, linkWorkspaceMemberPlayer, acceptWorkspaceInvite, subscribeToWorkspace });
   },
   "src/domain/matches.js": function(exports, require) {
 const { emptyStats } = require("src/domain/statistics.js");
@@ -1552,7 +1876,7 @@ const { renderShell } = require("src/components/shell.js");
 const { emptyState, pageHeading } = require("src/components/ui.js");
 const { readStore, writeStore, updateStore, makeId, activateWorkspaceStore, deactivateWorkspaceStore, replaceActiveStore, hasLocalData } = require("src/data/repository.js");
 const { supabase } = require("src/data/supabase-client.js");
-const { acceptWorkspaceInvite, createWorkspace, createWorkspaceInvite, listWorkspaceMembers, listWorkspaces, loadWorkspaceDocument } = require("src/data/workspace-api.js");
+const { acceptWorkspaceInvite, createWorkspace, createWorkspaceInvite, linkWorkspaceMemberPlayer, listWorkspaceMembers, listWorkspaces, loadWorkspaceDocument } = require("src/data/workspace-api.js");
 const { newMatch, startMatch, recordAction, undoLastAction, toggleOnCourt, advanceQuarter, finalizeMatch } = require("src/domain/matches.js");
 const { createTournament, updateTournamentAfterMatch } = require("src/domain/tournaments.js");
 const { renderDashboard } = require("src/pages/dashboard.js");
@@ -1606,7 +1930,7 @@ function pageContent(route, store) {
     case 'tournament': return renderTournaments(store, route.id);
     case 'match': return renderLiveMatch(store, store.matches.find(match => match.id === route.id));
     case 'profile': return renderPlayerProfile(store, route.id);
-    case 'account': return renderWorkspaceManagement({ workspace: activeWorkspace, members: workspaceMembers, user: authUser });
+    case 'account': return renderWorkspaceManagement({ workspace: activeWorkspace, members: workspaceMembers, user: authUser, players: store.players, teams: store.teams });
     default: return `${pageHeading('V1', 'Página no encontrada', 'La dirección no corresponde a una sección de ESTADÍSTICAS CHILE.')} ${emptyState('Ruta no disponible', 'Usa el menú principal para continuar.', '<a class="button button-secondary" href="#dashboard">Volver al inicio</a>')}`;
   }
 }
@@ -1649,6 +1973,18 @@ async function hashInviteToken(token) {
   const bytes = new TextEncoder().encode(token);
   const digest = await crypto.subtle.digest('SHA-256', bytes);
   return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('');
+}
+
+function createInviteCode() {
+  const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  const bytes = crypto.getRandomValues(new Uint8Array(12));
+  const characters = Array.from(bytes, byte => alphabet[byte % alphabet.length]).join('');
+  return `EC-${characters.slice(0, 4)}-${characters.slice(4, 8)}-${characters.slice(8, 12)}`;
+}
+
+function normalizeInviteCode(value) {
+  const code = String(value || '').trim().replace(/\s+/g, '');
+  return /^ec-/i.test(code) ? code.toUpperCase() : code;
 }
 
 function removeInviteFromAddress() {
@@ -1851,21 +2187,46 @@ async function submitWorkspaceCreate(form) {
   showToast(shouldImport ? 'Equipo creado y datos importados' : 'Espacio de trabajo creado');
 }
 
+async function submitWorkspaceJoin(form) {
+  const code = normalizeInviteCode(new FormData(form).get('inviteCode'));
+  if (code.length < 8) throw new Error('Escribe el código de equipo completo.');
+  const accepted = await acceptWorkspaceInvite(supabase, await hashInviteToken(code));
+  availableWorkspaces = await listWorkspaces(supabase);
+  const workspace = availableWorkspaces.find(item => item.id === accepted.workspace_id);
+  if (!workspace) throw new Error('El código fue aceptado, pero no se pudo abrir el equipo. Vuelve a intentarlo.');
+  setGateMessage('');
+  await activateCloudWorkspace(workspace);
+  navigate('#dashboard');
+  renderRoute();
+  showToast(`Te uniste a ${accepted.workspace_name}.`);
+}
+
 async function submitWorkspaceInvite(form) {
   if (!activeWorkspace) throw new Error('Selecciona un equipo primero.');
   const role = String(new FormData(form).get('role') || 'scorer');
-  const token = Array.from(crypto.getRandomValues(new Uint8Array(32)), byte => byte.toString(16).padStart(2, '0')).join('');
-  const tokenHash = await hashInviteToken(token);
-  await createWorkspaceInvite(supabase, activeWorkspace.id, tokenHash, role);
+  const code = createInviteCode();
+  const tokenHash = await hashInviteToken(code);
+  await createWorkspaceInvite(supabase, activeWorkspace.id, tokenHash, role, 25);
   const link = new URL(window.location.href);
-  link.searchParams.set('invite', token);
+  link.searchParams.set('invite', code);
   link.hash = '#dashboard';
   const result = document.querySelector('#invite-result');
   if (result) {
     result.hidden = false;
-    result.innerHTML = `<label for="invite-link">Comparte este enlace. Se podrá usar una vez y vence en 7 días.</label><input id="invite-link" readonly value="${escapeAttribute(link.toString())}"><button class="button button-small button-secondary" type="button" data-auth-action="copy-invite">Copiar enlace</button>`;
+    result.innerHTML = `<label for="invite-code">Código de acceso · válido para hasta 25 personas durante 7 días.</label><input id="invite-code" readonly value="${escapeAttribute(code)}"><button class="button button-small button-secondary" type="button" data-auth-action="copy-invite-code">Copiar código</button><label for="invite-link">También puedes compartir este enlace:</label><input id="invite-link" readonly value="${escapeAttribute(link.toString())}"><button class="button button-small button-secondary" type="button" data-auth-action="copy-invite">Copiar enlace</button>`;
   }
-  setFormMessage(form, 'Enlace creado. Compártelo con la persona que se unirá.');
+  setFormMessage(form, 'Código creado. Compártelo con las personas que se unirán al equipo.');
+}
+
+async function submitMemberPlayerLink(form) {
+  if (!activeWorkspace) throw new Error('Selecciona un equipo primero.');
+  const playerId = String(new FormData(form).get('playerId') || '');
+  if (playerId && !readStore().players.some(player => player.id === playerId)) {
+    throw new Error('La ficha de jugador seleccionada ya no existe.');
+  }
+  await linkWorkspaceMemberPlayer(supabase, activeWorkspace.id, form.dataset.userId, playerId || null);
+  await refreshWorkspaceMembers();
+  showToast(playerId ? 'Cuenta vinculada con la ficha del jugador' : 'Ficha de jugador desvinculada');
 }
 
 function escapeAttribute(value) {
@@ -2074,7 +2435,9 @@ async function onSubmit(event) {
     if (form.dataset.form === 'match') submitMatchForm(form);
     if (form.dataset.form === 'tournament') submitTournamentForm(form);
     if (form.dataset.form === 'workspace-create') await submitWorkspaceCreate(form);
+    if (form.dataset.form === 'workspace-join') await submitWorkspaceJoin(form);
     if (form.dataset.form === 'workspace-invite') await submitWorkspaceInvite(form);
+    if (form.dataset.form === 'member-player-link') await submitMemberPlayerLink(form);
   } catch (error) {
     setFormMessage(form, error.message || 'No se pudo guardar. Revisa los datos e inténtalo otra vez.', true);
   }
@@ -2172,6 +2535,9 @@ function onClick(event) {
     } else if (action === 'copy-invite') {
       const link = document.querySelector('#invite-link')?.value;
       if (link) navigator.clipboard.writeText(link).then(() => showToast('Enlace copiado')).catch(() => showToast('Selecciona y copia el enlace manualmente.', 'info'));
+    } else if (action === 'copy-invite-code') {
+      const code = document.querySelector('#invite-code')?.value;
+      if (code) navigator.clipboard.writeText(code).then(() => showToast('Código copiado')).catch(() => showToast('Selecciona y copia el código manualmente.', 'info'));
     }
     return;
   }
@@ -2321,19 +2687,46 @@ function renderWorkspaceGate({ user, workspaces, hasLocalData, message = '', err
     <div class="access-heading"><span class="eyebrow">CUENTA: ${escapeHtml(user.email || '')}</span><h1>Elige tu equipo</h1><p>Los miembros de un equipo comparten sus equipos deportivos, jugadores, partidos y estadísticas.</p></div>
     ${message ? `<p class="access-message ${error ? 'error' : ''}" role="status">${escapeHtml(message)}</p>` : ''}
     ${choices}
+    <div class="workspace-join">
+      <h2>Unirse con código</h2>
+      <p>Escribe el código que te entregó el administrador para acceder al mismo equipo compartido.</p>
+      <form class="workspace-join-form" data-form="workspace-join">
+        <label class="field"><span>Código de equipo</span><input name="inviteCode" required maxlength="40" autocomplete="off" autocapitalize="characters" placeholder="EC-ABCD-EFGH-JKLM"></label>
+        <button class="button button-secondary" type="submit">Unirme al equipo</button>
+        <div class="form-message" role="status"></div>
+      </form>
+    </div>
     <div class="workspace-create"><h2>Crear un espacio de trabajo</h2><form class="form-grid" data-form="workspace-create"><label class="field field-full"><span>Nombre del equipo o club</span><input name="name" required maxlength="80" placeholder="Ej. Club Deportivo Curicó"></label>${hasLocalData ? '<label class="workspace-import field-full"><input type="checkbox" name="importLocal" checked><span>Importar equipos y estadísticas guardados en este navegador</span></label>' : ''}<button class="button button-primary field-full" type="submit">Crear espacio</button><div class="form-message field-full" role="status"></div></form></div>
     <p class="access-footnote">¿Te invitaron? Abre el enlace de invitación en este navegador después de iniciar sesión.</p>
   </section></main>`;
 }
 
-function renderWorkspaceManagement({ workspace, members, user }) {
+function renderWorkspaceManagement({ workspace, members, user, players = [], teams = [] }) {
   const isManager = ['owner', 'admin'].includes(workspace.role);
-  const memberRows = members.map(member => `<article class="member-row"><span class="member-avatar">${escapeHtml((member.display_name || 'U').slice(0, 1).toUpperCase())}</span><span class="member-copy"><b>${escapeHtml(member.display_name || 'Miembro')}</b><small>${member.user_id === user.id ? 'Tú · ' : ''}${roleNames[member.role] || 'Miembro'} · desde ${new Intl.DateTimeFormat('es-CL', { dateStyle: 'medium' }).format(new Date(member.joined_at))}</small></span></article>`).join('');
+  const playerById = new Map(players.map(player => [player.id, player]));
+  const teamById = new Map(teams.map(team => [team.id, team]));
+  const playerOwner = new Map(members.filter(member => member.player_id).map(member => [member.player_id, member.user_id]));
+  const playerDescription = player => {
+    if (!player) return 'Ficha no disponible';
+    const team = teamById.get(player.teamId);
+    return `#${player.number} · ${player.name}${team ? ` · ${team.name}` : ''}`;
+  };
+  const memberRows = members.map(member => {
+    const linkedPlayer = playerById.get(member.player_id);
+    const playerOptions = players
+      .filter(player => !playerOwner.has(player.id) || playerOwner.get(player.id) === member.user_id)
+      .map(player => `<option value="${escapeHtml(player.id)}" ${member.player_id === player.id ? 'selected' : ''}>${escapeHtml(playerDescription(player))}</option>`).join('');
+    const identity = linkedPlayer ? `Jugador: ${playerDescription(linkedPlayer)}` : 'Sin ficha de jugador vinculada';
+    const linkControl = isManager
+      ? `<form class="member-link-form" data-form="member-player-link" data-user-id="${escapeHtml(member.user_id)}"><label><span>Ficha de jugador</span><select name="playerId"><option value="">Sin vincular</option>${playerOptions}</select></label><button class="button button-small button-secondary" type="submit">Guardar</button><div class="form-message" role="status"></div></form>`
+      : `<span class="member-player-state">${escapeHtml(identity)}</span>`;
+    return `<article class="member-row member-row-linked"><span class="member-avatar">${escapeHtml((member.display_name || 'U').slice(0, 1).toUpperCase())}</span><span class="member-copy"><b>${escapeHtml(member.display_name || 'Miembro')}${member.user_id === user.id ? ' · Tú' : ''}</b><small>${roleNames[member.role] || 'Miembro'} · desde ${new Intl.DateTimeFormat('es-CL', { dateStyle: 'medium' }).format(new Date(member.joined_at))}</small><span class="member-player-state">${escapeHtml(identity)}</span></span>${linkControl}</article>`;
+  }).join('');
   return `<section class="content-card card workspace-management">
-    <div class="section-header"><div><span class="eyebrow">COLABORACIÓN</span><h2>${escapeHtml(workspace.name)}</h2><p>Comparte el trabajo con quienes registran y revisan las estadísticas.</p></div></div>
-    <div class="workspace-permissions"><span><b>${roleNames[workspace.role] || 'Miembro'}</b> es tu rol</span><span>Los cambios del equipo se sincronizan entre sus miembros.</span></div>
-    <div class="workspace-management-grid"><section><div class="section-header"><div><h3>Miembros</h3><p>${members.length} persona${members.length === 1 ? '' : 's'} en este equipo.</p></div></div><div class="member-list">${memberRows || '<p class="muted">Todavía no hay miembros.</p>'}</div></section>
-    <section><div class="section-header"><div><h3>Invitar a alguien</h3><p>Genera un enlace privado válido por 7 días.</p></div></div>${isManager ? `<form class="form-grid invite-form" data-form="workspace-invite"><label class="field field-full"><span>Permiso</span><select name="role"><option value="scorer">Anotador · registra y modifica estadísticas</option><option value="viewer">Solo lectura · consulta los datos</option>${workspace.role === 'owner' ? '<option value="admin">Administrador · gestiona el equipo e invita</option>' : ''}</select></label><button class="button button-primary field-full" type="submit">Crear enlace de invitación</button><div class="form-message field-full" role="status"></div></form><div class="invite-result" id="invite-result" hidden></div>` : '<p class="muted">Solo propietarios y administradores pueden invitar personas.</p>'}</section></div>
+    <div class="section-header"><div><span class="eyebrow">COLABORACIÓN</span><h2>${escapeHtml(workspace.name)}</h2><p>Las cuentas conectadas comparten equipos, jugadores, partidos y estadísticas.</p></div></div>
+    <div class="workspace-permissions"><span><b>${roleNames[workspace.role] || 'Miembro'}</b> es tu rol</span><span>Una cuenta puede vincularse con su propia ficha de jugador.</span></div>
+    <div class="workspace-management-grid"><section><div class="section-header"><div><h3>Miembros y jugadores</h3><p>${members.length} persona${members.length === 1 ? '' : 's'} en este equipo.</p></div></div><div class="member-list">${memberRows || '<p class="muted">Todavía no hay miembros.</p>'}</div></section>
+    <section><div class="section-header"><div><h3>Invitar a alguien</h3><p>Crea un código de acceso para que varias personas entren al mismo equipo.</p></div></div>${isManager ? `<form class="form-grid invite-form" data-form="workspace-invite"><label class="field field-full"><span>Permiso</span><select name="role"><option value="scorer">Anotador · registra y modifica estadísticas</option><option value="viewer">Solo lectura · consulta los datos</option>${workspace.role === 'owner' ? '<option value="admin">Administrador · gestiona el equipo e invita</option>' : ''}</select></label><button class="button button-primary field-full" type="submit">Crear código de equipo</button><div class="form-message field-full" role="status"></div></form><div class="invite-result" id="invite-result" hidden></div>` : '<p class="muted">Solo propietarios y administradores pueden invitar personas y vincular fichas.</p>'}</section></div>
   </section>`;
 }
 
